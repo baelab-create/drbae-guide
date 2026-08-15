@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>닥터배 스킨부스터 · 첫 사용 가이드</title>
+<meta name="description" content="닥터배 스킨부스터 페이스 라인업 6종 소개 — 피부전문가를 위한 첫 사용 가이드">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{
+    --navy:#0e2a47;
+    --blue:#2f6fb2;
+    --sky:#eaf2fa;
+    --gold:#b98a2e;
+    --ink:#20242b;
+    --sub:#5b6472;
+    --line:#dfe5ec;
+    --bg:#f7f9fb;
+    --card:#ffffff;
+    --pink:#d97b96;
+    --brown:#8a6547;
+    --green:#4f7d5c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Pretendard",-apple-system,BlinkMacSystemFont,"Malgun Gothic",sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.65;
+    word-break:keep-all;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:0 20px;}
+
+  /* ---------- hero ---------- */
+  header{
+    background:linear-gradient(160deg,var(--navy) 0%,#1b4470 70%,var(--blue) 100%);
+    color:#fff; padding:64px 0 56px; text-align:center;
+  }
+  .hero-badge{
+    display:inline-block; font-size:.8rem; letter-spacing:.14em;
+    border:1px solid rgba(255,255,255,.45); border-radius:999px;
+    padding:6px 16px; margin-bottom:20px; color:#dce9f7;
+  }
+  header h1{font-size:clamp(1.6rem,4.5vw,2.4rem); font-weight:800; letter-spacing:-.01em;}
+  header h1 small{display:block;font-size:.55em;font-weight:500;color:#bcd3ea;margin-top:10px;letter-spacing:.02em;}
+  .hero-note{margin-top:22px;font-size:.9rem;color:#aac4de;}
+
+  /* ---------- section ---------- */
+  section{padding:56px 0 8px;}
+  .sec-label{
+    font-size:.78rem;font-weight:700;letter-spacing:.16em;color:var(--blue);
+    text-transform:uppercase;margin-bottom:8px;
+  }
+  h2{font-size:clamp(1.25rem,3.4vw,1.65rem);font-weight:800;letter-spacing:-.01em;margin-bottom:22px;}
+  .lead{color:var(--sub);font-size:.98rem;margin-bottom:26px;max-width:640px;}
+
+  /* ---------- why cards (flow) ---------- */
+  .flow{display:grid;gap:12px;counter-reset:step;}
+  .flow-card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px;display:flex;gap:16px;align-items:flex-start;
+  }
+  .flow-num{
+    flex:0 0 34px;height:34px;border-radius:50%;
+    background:var(--sky);color:var(--blue);font-weight:800;
+    display:flex;align-items:center;justify-content:center;font-size:.95rem;margin-top:2px;
+  }
+  .flow-card h3{font-size:1.02rem;font-weight:700;margin-bottom:4px;}
+  .flow-card p{font-size:.92rem;color:var(--sub);}
+  .pull{
+    margin-top:26px;background:var(--navy);color:#e8f0f9;border-radius:14px;
+    padding:26px 28px;font-size:1.02rem;line-height:1.7;
+  }
+  .pull strong{color:#fff;}
+  .pull .src{display:block;margin-top:12px;font-size:.8rem;color:#9db8d4;}
+
+  /* ---------- accordion ---------- */
+  details{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    margin-bottom:12px;overflow:hidden;transition:box-shadow .2s;
+  }
+  details[open]{box-shadow:0 6px 24px rgba(14,42,71,.08);}
+  summary{
+    list-style:none;cursor:pointer;padding:18px 20px;
+    display:flex;align-items:center;gap:14px;user-select:none;
+  }
+  summary::-webkit-details-marker{display:none;}
+  .dot{flex:0 0 12px;height:12px;border-radius:50%;}
+  .p-name{font-weight:700;font-size:1.02rem;}
+  .p-tag{
+    margin-left:auto;flex-shrink:0;font-size:.72rem;font-weight:600;color:var(--sub);
+    background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:4px 10px;
+  }
+  .chev{flex-shrink:0;width:18px;height:18px;color:var(--sub);transition:transform .25s;}
+  details[open] .chev{transform:rotate(180deg);}
+  .p-body{padding:2px 20px 20px;border-top:1px dashed var(--line);}
+  .p-body p{font-size:.93rem;color:var(--ink);margin:14px 0 0;}
+  .p-body .kv{margin-top:14px;display:grid;gap:8px;}
+  .kv div{font-size:.88rem;display:flex;gap:10px;}
+  .kv b{flex:0 0 74px;color:var(--blue);font-weight:700;}
+  .kv span{color:var(--sub);}
+  .caution{
+    margin-top:16px;font-size:.85rem;color:#8a5a00;background:#fdf6e7;
+    border:1px solid #f0e0bb;border-radius:10px;padding:10px 14px;
+  }
+
+  /* ---------- program ---------- */
+  .steps{display:grid;gap:0;position:relative;margin-top:6px;}
+  .step{
+    display:flex;gap:18px;padding:0 0 26px;position:relative;
+  }
+  .step:last-child{padding-bottom:0;}
+  .step::before{
+    content:"";position:absolute;left:17px;top:38px;bottom:0;width:2px;background:var(--line);
+  }
+  .step:last-child::before{display:none;}
+  .step-num{
+    flex:0 0 36px;height:36px;border-radius:50%;background:#fff;border:2px solid var(--blue);
+    color:var(--blue);font-weight:800;display:flex;align-items:center;justify-content:center;
+    position:relative;z-index:1;font-size:.9rem;
+  }
+  .step h3{font-size:1rem;font-weight:700;padding-top:5px;}
+  .step p{font-size:.9rem;color:var(--sub);margin-top:3px;}
+  .step .use{display:inline-block;margin-top:8px;font-size:.78rem;font-weight:600;color:var(--blue);background:var(--sky);border-radius:999px;padding:3px 12px;}
+
+  .rules{
+    margin-top:34px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;
+  }
+  .rules h3{font-size:.95rem;font-weight:800;color:var(--navy);margin-bottom:12px;}
+  .rules ul{list-style:none;display:grid;gap:9px;}
+  .rules li{font-size:.88rem;color:var(--sub);padding-left:22px;position:relative;}
+  .rules li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800;}
+
+  /* ---------- footer ---------- */
+  footer{
+    margin-top:64px;padding:36px 0 44px;background:var(--navy);color:#9db8d4;
+    text-align:center;font-size:.83rem;line-height:1.8;
+  }
+  footer b{color:#dce9f7;font-weight:600;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="hero-badge">DR.BAE FIRST GUIDE</div>
+    <h1>닥터배 스킨부스터 첫 사용 가이드
+      <small>피부전문가를 위한 페이스 라인업 6종 · 스킨케어 편</small>
+    </h1>
+    <p class="hero-note">숭실대학교 의공학 연구실에서 출발한 전문가용 스킨부스터</p>
+  </div>
+</header>
+
+<!-- ================= WHY ================= -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-label">Why DR.BAE</div>
+    <h2>왜 피부전문가는 닥터배를 선택해야 하는가</h2>
+
+    <div class="flow">
+      <div class="flow-card">
+        <div class="flow-num">1</div>
+        <div>
+          <h3>스킨 롱제비티(Skin Longevity) 시대</h3>
+          <p>피부 관리의 흐름이 일회성 이벤트 관리에서 피부 컨디션을 길게 유지하는 꾸준한 케어로 이동하고 있습니다.</p>
+        </div>
+      </div>
+      <div class="flow-card">
+        <div class="flow-num">2</div>
+        <div>
+          <h3>스킨부스터, 메인 관리로 성장</h3>
+          <p>그 중심에서 스킨부스터는 옵션이 아닌 관리 프로그램의 메인으로 자리 잡았습니다. 어떤 스킨부스터를 쓰는지가 곧 샵의 수준을 보여줍니다.</p>
+        </div>
+      </div>
+      <div class="flow-card">
+        <div class="flow-num">3</div>
+        <div>
+          <h3>개발자가 공개된 전문가용 브랜드</h3>
+          <p>닥터배는 연구자와 개발자가 공개되어 있는 브랜드입니다. 숭실대학교 의공학 연구실(배원규 교수)의 연구가 ㈜배랩을 통해 시장으로 직접 이어졌습니다. 원료(식물 유래 세포외소포, EV)와 전달 방식 모두 출처를 설명할 수 있습니다.</p>
+        </div>
+      </div>
+      <div class="flow-card">
+        <div class="flow-num">4</div>
+        <div>
+          <h3>고객에게 보여지는 선택</h3>
+          <p>제품은 고객의 눈앞에서 사용됩니다. 피부전문가(샵 원장)가 개발자가 공개된 검증 가능한 제품을 까다롭게 골랐다는 사실 자체가 샵의 전문성과 브랜딩이 됩니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pull">
+      "무엇을 바르는가"만큼 <strong>"누가 만들었고, 어떻게 전달되는가"</strong>를 설명할 수 있어야 전문가입니다.
+      닥터배는 원장님을 지역의 피부 전문가로 격상시키는 것을 목표로 합니다.
+      <span class="src">DR.BAE Skin Booster · ㈜배랩 × 숭실대학교 의공학 연구실</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LINEUP ================= -->
+<section id="lineup">
+  <div class="wrap">
+    <div class="sec-label">Face Line-up 6</div>
+    <h2>제품 소개 — 페이스 라인업 6종</h2>
+    <p class="lead">각 제품을 눌러 상세 내용을 확인하세요. 바이알 제품은 단회용 밀봉으로, 개봉 당일 1병 기준으로 사용합니다.</p>
+
+    <details open>
+      <summary>
+        <span class="dot" style="background:#2f6fb2"></span>
+        <span class="p-name">엑소토카인 블루</span>
+        <span class="p-tag">페이스 전용 앰플</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="p-body">
+        <p>페이스 관리의 기준이 되는 스킨부스터 앰플입니다. 식물 유래 세포외소포(EV)를 담아, 관리 프로그램의 메인 부스팅 단계에 사용합니다.</p>
+        <div class="kv">
+          <div><b>포지션</b><span>페이스 메인 부스팅 앰플</span></div>
+          <div><b>사용법</b><span>도포 후 초음파·갈바닉 등 미용기기로 각질층 수준의 고른 전달</span></div>
+          <div><b>페어링</b><span>칼리파우더 용해 베이스로 사용 가능, 핑크 진정팩으로 마무리</span></div>
+        </div>
+        <div class="caution">단회용 바이알 — 개봉 당일 소진. 블루→핑크 순차 이중 스탬프 관리는 하지 않습니다.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="dot" style="background:#d97b96"></span>
+        <span class="p-name">피디로엔 핑크</span>
+        <span class="p-tag">페이스 전용 앰플</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="p-body">
+        <p>진정 케어의 중심 제품입니다. 관리 마지막의 진정팩 단계에 자주 사용되며, 예민해진 피부의 컨디션을 정돈하는 데 도움을 줍니다. 손상 장벽 급성기 고객의 장벽 케어 메인으로도 활용됩니다.</p>
+        <div class="kv">
+          <div><b>포지션</b><span>진정 · 장벽 케어 앰플</span></div>
+          <div><b>사용법</b><span>부스팅 이후 진정팩 마무리 단골 제품</span></div>
+          <div><b>페어링</b><span>블루 부스팅 후 마무리, 칼리파우더 용해 베이스 가능</span></div>
+        </div>
+        <div class="caution">단회용 바이알 — 개봉 당일 소진.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="dot" style="background:#5b8fc9"></span>
+        <span class="p-name">엑소토카인 리퀴드 마스크</span>
+        <span class="p-tag">소프트필</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="p-body">
+        <p>PHA와 식물 유래 세포외소포(EV)를 담은 6세대 소프트필입니다. 각질을 부드럽게 정돈해 다음 단계 제품이 고르게 전달될 바탕을 만들어 줍니다. No-Rinse 사용이 가능해 관리 동선이 간결합니다.</p>
+        <div class="kv">
+          <div><b>포지션</b><span>각질 정돈 · 프로그램 도입부</span></div>
+          <div><b>사용법</b><span>클렌징 후 도포, 씻어내지 않고 다음 단계로 연결 가능</span></div>
+          <div><b>페어링</b><span>소프트필 프로그램은 초음파·갈바닉 기기와 함께 구성</span></div>
+        </div>
+        <div class="caution">단회용 바이알 — 개봉 당일 소진.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="dot" style="background:#8a6547"></span>
+        <span class="p-name">토코포르테 브라운</span>
+        <span class="p-tag">페이스 + 두피</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="p-body">
+        <p>13종 비타민을 담은 액상 제품으로, 에어건 분사 전용입니다. 미세 분사 시 기화열로 피부 표면의 열감을 식혀 주어, 관리의 마지막을 시원하게 마무리하는 쿨링 피날레 단계를 담당합니다.</p>
+        <div class="kv">
+          <div><b>포지션</b><span>프로그램 마지막 쿨링 피날레</span></div>
+          <div><b>사용법</b><span>에어건 전용 (액상 타입)</span></div>
+          <div><b>페어링</b><span>모든 페이스 프로그램의 마무리 단계, 칼리파우더 용해 베이스 가능</span></div>
+        </div>
+        <div class="caution">항상 프로그램의 마지막 단계에 배치합니다. 단회용 바이알 — 개봉 당일 소진.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="dot" style="background:#4f7d5c"></span>
+        <span class="p-name">칼리파우더</span>
+        <span class="p-tag">믹스인 파우더</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="p-body">
+        <p>동결건조 방식의 믹스인 파우더입니다. 단독으로 쓰는 제품이 아니라, 앰플에 녹여 관리의 농도를 한 단계 올리는 부스팅 옵션입니다.</p>
+        <div class="kv">
+          <div><b>포지션</b><span>앰플에 더하는 부스팅 파우더</span></div>
+          <div><b>사용법</b><span>블루 · 핑크 · 토코포르테(및 두피용 블랙)에만 용해하여 사용</span></div>
+          <div><b>페어링</b><span>기본 프로그램에 익숙해진 뒤 업그레이드 옵션으로 도입</span></div>
+        </div>
+        <div class="caution">단독 사용 금지. <b>에센스겔과 직접 혼합 금지</b> — 겔 제형이 무너집니다. 용해는 위 호환 앰플에만.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="dot" style="background:#b98a2e"></span>
+        <span class="p-name">에센스겔 500 / 150</span>
+        <span class="p-tag">페이스 + 데콜테</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="p-body">
+        <p>카보머 수성 겔 타입의 매뉴얼 · 믹싱 베이스입니다. 손 관리와 기기 관리 모두의 바탕이 되며, 1~2분 내 100% 흡수되어 끈적임 없이 다음 단계로 이어집니다.</p>
+        <div class="kv">
+          <div><b>포지션</b><span>매뉴얼 테크닉 · 기기 관리 공용 베이스</span></div>
+          <div><b>사용법</b><span>단독 매뉴얼 관리 또는 앰플과 함께 사용</span></div>
+          <div><b>페어링</b><span>블루 · 핑크 앰플과 함께 부스팅 단계 구성</span></div>
+        </div>
+        <div class="caution">칼리파우더와 직접 혼합 금지 (겔 네트워크 붕괴).</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ================= PROGRAM ================= -->
+<section id="program">
+  <div class="wrap">
+    <div class="sec-label">Starter Program</div>
+    <h2>가장 기본적인 관리 프로그램 예시</h2>
+    <p class="lead">처음 도입하는 샵을 위한 진정 기본케어 구성입니다. 미용기기는 초음파 · 갈바닉 범위에서 사용합니다. (약 50~60분)</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>클렌징 & 피부 컨디션 체크</h3>
+          <p>깨끗이 클렌징하고 오늘의 피부 상태를 확인합니다.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h3>소프트필 — 각질 정돈</h3>
+          <p>리퀴드 마스크로 각질을 부드럽게 정돈해 다음 단계의 바탕을 만듭니다. No-Rinse로 간결하게 연결합니다.</p>
+          <span class="use">엑소토카인 리퀴드 마스크</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h3>부스팅 — 앰플 전달</h3>
+          <p>에센스겔을 베이스로 블루 앰플을 도포하고, 초음파 · 갈바닉 기기로 각질층 수준까지 고르게 전달합니다.</p>
+          <span class="use">에센스겔 + 엑소토카인 블루</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <h3>진정팩 마무리</h3>
+          <p>핑크로 피부를 차분하게 정돈합니다. 예민해진 피부의 컨디션 정돈에 도움을 줍니다.</p>
+          <span class="use">피디로엔 핑크</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div>
+          <h3>쿨링 피날레</h3>
+          <p>토코포르테를 에어건으로 미세 분사해 기화열 쿨링으로 시원하게 마무리합니다.</p>
+          <span class="use">토코포르테 브라운 (에어건)</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div>
+          <h3>마무리 & 홈케어 안내</h3>
+          <p>자외선 차단으로 마무리하고, 다음 방문 주기와 홈케어를 안내합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rules">
+      <h3>첫 사용 전 기억할 기본 원칙</h3>
+      <ul>
+        <li>바이알 제품(블루 · 핑크 · 리퀴드마스크 · 토코포르테 · 칼리)은 단회용 밀봉 — 개봉 당일 1병 기준 소진</li>
+        <li>칼리파우더는 단독 사용 금지, 에센스겔과 직접 혼합 금지 (용해는 블루 · 핑크 · 토코포르테에만)</li>
+        <li>토코포르테 에어건은 항상 프로그램의 마지막 쿨링 단계</li>
+        <li>페이스에는 멘톨 함유 제품을 사용하지 않습니다</li>
+        <li>익숙해지면 칼리파우더 부스팅, 프로그램 확장(DR.BAE 관리 프로그램 8종)으로 단계적으로 업그레이드</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>DR.BAE Skin Booster</b><br>
+    ㈜배랩 · 숭실대학교 의공학 연구실 (배원규 교수)<br>
+    본 페이지는 피부전문가(피부미용업) 대상 제품 안내 자료입니다.
+  </div>
+</footer>
+
+</body>
+</html>
