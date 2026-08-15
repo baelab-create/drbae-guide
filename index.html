@@ -54,6 +54,24 @@
   h2{font-size:clamp(1.25rem,3.4vw,1.65rem);font-weight:800;letter-spacing:-.01em;margin-bottom:22px;}
   .lead{color:var(--sub);font-size:.98rem;margin-bottom:26px;max-width:640px;}
 
+  /* ---------- brand intro ---------- */
+  .brand-intro{
+    background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);
+    border-radius:14px;padding:22px 26px;margin-bottom:22px;
+  }
+  .brand-intro p{font-size:.96rem;color:var(--sub);}
+  .brand-intro p + p{margin-top:8px;}
+  .brand-intro b{color:var(--navy);font-weight:700;}
+
+  /* ---------- trust chips ---------- */
+  .trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+  .trust span{
+    font-size:.8rem;color:var(--navy);background:var(--sky);
+    border:1px solid #cfe0f0;border-radius:999px;padding:5px 13px;
+  }
+  .trust a{color:var(--blue);font-weight:700;text-decoration:none;}
+  .trust a:hover{text-decoration:underline;}
+
   /* ---------- why cards (flow) ---------- */
   .flow{display:grid;gap:12px;counter-reset:step;}
   .flow-card{
@@ -176,6 +194,13 @@
     <div class="sec-label">Why DR.BAE</div>
     <h2>왜 피부전문가는 닥터배를 선택해야 하는가</h2>
 
+    <div class="brand-intro">
+      <p><b>㈜배랩의 닥터배</b>는 메디컬 에스테틱 스킨부스터 <b>전문가용 브랜드</b>입니다.</p>
+      <p>서울대학교 의과대학과 스탠포드를 거쳐 현재 숭실대학교에 재직 중인 <b>배원규 교수</b>가
+      정부 '창업선도대학' 프로젝트를 통해 설립한 <b>연구실 기업(Lab Startup)</b>에서 탄생했습니다.
+      연구실의 기술이 유통 단계를 거치지 않고 브랜드로 직접 이어진, 출처가 분명한 제품입니다.</p>
+    </div>
+
     <div class="flow">
       <div class="flow-card">
         <div class="flow-num">1</div>
@@ -202,7 +227,13 @@
         <div class="flow-num">4</div>
         <div>
           <h3>고객에게 보여지는 선택</h3>
-          <p>제품은 고객의 눈앞에서 사용됩니다. 피부전문가(샵 원장)가 개발자가 공개된 검증 가능한 제품을 까다롭게 골랐다는 사실 자체가 샵의 전문성과 브랜딩이 됩니다.</p>
+          <p>제품은 고객의 눈앞에서 사용됩니다. 피부전문가(샵 원장)가 개발자가 공개된 검증 가능한 제품을 까다롭게 골랐다는 사실 자체가 샵의 전문성과 브랜딩이 됩니다. 닥터배는 그 선택을 뒷받침하는 원칙을 지킵니다.</p>
+          <div class="trust">
+            <span>개발자 인스타그램 공개 — <a href="https://www.instagram.com/dr.bae_medical/" target="_blank" rel="noopener">@dr.bae_medical</a></span>
+            <span>공동구매 진행하지 않음 — 가격 질서 보호</span>
+            <span>5년 이상 가격 변동 없음</span>
+            <span>유럽 등 선진 메디컬 시장 수출</span>
+          </div>
         </div>
       </div>
     </div>
