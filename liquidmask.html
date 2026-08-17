@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>리퀴드 마스크 소프트필 — 적용 순서 가이드</title>
+<meta name="description" content="리퀴드 마스크 소프트필(PHA 6세대) 적용 순서 가이드 — 전처리로 쓸까, 씻어내지 않는 마무리로 쓸까">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{
+    --ink:#0E1C2B;        /* 본문 잉크 */
+    --ink-2:#43586B;      /* 보조 텍스트 */
+    --line:#DCE3EA;       /* 헤어라인 */
+    --bg:#EEF2F5;         /* 클리니컬 그레이 배경 */
+    --card:#FFFFFF;
+    --blue:#1C5FA8;       /* 엑소토카인 블루 */
+    --blue-2:#2E8BC0;     /* 밝은 블루 */
+    --blue-soft:#EAF2FA;  /* 블루 틴트 */
+    --amber:#9A5B12;      /* 주의 */
+    --amber-soft:#FBF1E2;
+    --mono: ui-monospace, "SF Mono", "Menlo", "Consolas", monospace;
+    --kr: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    background:var(--bg);
+    font-family:var(--kr);
+    color:var(--ink);
+    line-height:1.65;
+    padding:18px 12px 40px;
+    display:flex;justify-content:center;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .wrap{animation:rise .5s ease both;}
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  .wrap{width:100%;max-width:440px;}
+
+  /* 상단 메타바 */
+  .metabar{
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;
+    color:var(--ink-2);text-transform:uppercase;
+    padding:0 2px 10px;
+  }
+  .metabar .wm{color:#8A99A6;}
+  .metabar .pg{color:var(--blue);font-weight:600;}
+
+  /* 헤더 */
+  .head{
+    background:var(--ink);color:#fff;border-radius:16px;
+    padding:22px 20px 20px;position:relative;overflow:hidden;
+  }
+  .head::after{
+    content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;
+    background:radial-gradient(circle,rgba(46,139,192,.35),transparent 70%);
+  }
+  .eyebrow{
+    font-family:var(--mono);font-size:10px;letter-spacing:.22em;
+    color:var(--blue-2);text-transform:uppercase;margin-bottom:10px;
+  }
+  .head h1{font-size:21px;line-height:1.32;font-weight:700;letter-spacing:-.01em;}
+  .head .sub{margin-top:8px;font-size:13px;color:#AEC2D2;font-weight:400;}
+
+  /* 결론 배너 */
+  .verdict{
+    background:var(--blue-soft);border:1px solid #CFE0F0;border-radius:14px;
+    padding:15px 16px;margin-top:14px;display:flex;gap:12px;align-items:flex-start;
+  }
+  .verdict .ic{flex:0 0 auto;color:var(--blue);margin-top:1px;}
+  .verdict .vt{font-weight:700;font-size:14.5px;color:var(--blue);}
+  .verdict .vd{font-size:12.5px;color:var(--ink-2);margin-top:3px;}
+
+  /* 분기 라벨 */
+  .branch{
+    text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:.16em;
+    color:var(--ink-2);text-transform:uppercase;margin:20px 0 10px;position:relative;
+  }
+  .branch span{background:var(--bg);padding:0 10px;position:relative;z-index:1;}
+  .branch::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--line);}
+
+  /* 헤더 태그 */
+  .htags{display:flex;align-items:center;gap:8px;margin-bottom:11px;flex-wrap:wrap;}
+  .tag-peel{
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:#fff;background:linear-gradient(135deg,#2E8BC0,#1C5FA8);
+    border-radius:999px;padding:4px 11px;font-weight:700;
+  }
+  .eyebrow-in{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--blue-2);text-transform:uppercase;}
+
+  /* 제품 포지셔닝 밴드 */
+  .pos{
+    background:linear-gradient(135deg,#12314F,#0E1C2B);color:#fff;
+    border-radius:16px;padding:20px 18px;margin-top:12px;position:relative;overflow:hidden;
+  }
+  .pos::after{content:"";position:absolute;left:-30px;bottom:-40px;width:150px;height:150px;background:radial-gradient(circle,rgba(46,139,192,.30),transparent 70%);}
+  .pos-eye{font-family:var(--mono);font-size:10px;letter-spacing:.13em;color:var(--blue-2);text-transform:uppercase;margin-bottom:9px;}
+  .pos-h{font-size:19px;font-weight:800;line-height:1.34;letter-spacing:-.01em;}
+  .pos-flow{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:14px 0 12px;}
+  .pf-step{font-size:11.5px;font-weight:600;color:#DCE9F3;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:6px 10px;}
+  .pf-step.hi{color:#0E1C2B;background:#8FD0EE;border-color:#8FD0EE;font-weight:800;}
+  .pf-arr{color:#5E7C96;font-family:var(--mono);font-size:13px;}
+  .pos-note{font-size:12px;color:#AEC2D2;line-height:1.62;border-top:1px solid rgba(255,255,255,.12);padding-top:11px;}
+  .pos-note b{color:#fff;font-weight:700;}
+
+  /* 루트 카드 */
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:16px 16px 14px;margin-bottom:12px;
+  }
+  .card-h{display:flex;align-items:center;gap:11px;margin-bottom:10px;}
+  .badge{
+    flex:0 0 auto;width:34px;height:34px;border-radius:9px;
+    display:flex;align-items:center;justify-content:center;color:#fff;
+  }
+  .badge.a{background:linear-gradient(135deg,#2E8BC0,#1C5FA8);}
+  .badge.b{background:linear-gradient(135deg,#1C5FA8,#103A66);}
+  .badge.warn{background:linear-gradient(135deg,#C8862F,#9A5B12);}
+  .card-h .role{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--ink-2);text-transform:uppercase;}
+  .card-h .name{font-weight:700;font-size:15.5px;letter-spacing:-.01em;}
+
+  .goal{
+    font-size:12.5px;color:var(--blue);font-weight:600;
+    background:var(--blue-soft);border-radius:8px;padding:7px 10px;margin-bottom:11px;
+  }
+  .flow{
+    font-family:var(--mono);font-size:11px;color:var(--ink);background:#F5F8FB;
+    border:1px dashed #CDD9E4;border-radius:8px;padding:9px 10px;line-height:1.85;
+    margin-bottom:11px;word-break:keep-all;
+  }
+  .flow b{color:var(--blue);}
+  .why{font-size:12.5px;color:var(--ink-2);}
+  .why b{color:var(--ink);font-weight:600;}
+  .fit{
+    margin-top:9px;font-size:11.5px;color:var(--ink-2);
+    border-top:1px solid var(--line);padding-top:9px;
+  }
+  .fit b{color:var(--ink);}
+
+  /* 판단 기준 표 */
+  .rule{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px;}
+  .rule .t{font-weight:700;font-size:14.5px;margin-bottom:11px;display:flex;align-items:center;gap:8px;}
+  .rule .t svg{color:var(--blue);}
+  .row{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line);}
+  .row:first-of-type{border-top:none;}
+  .row .cond{flex:1;font-size:12.5px;color:var(--ink);}
+  .row .arrow{color:#9DB0BF;font-family:var(--mono);font-size:13px;}
+  .row .pick{
+    flex:0 0 auto;font-size:11.5px;font-weight:700;color:var(--blue);
+    background:var(--blue-soft);border-radius:999px;padding:4px 11px;white-space:nowrap;
+  }
+
+  /* 주의 카드 */
+  .card.warn{background:var(--amber-soft);border-color:#EBD6B5;}
+  .card.warn .name{color:var(--amber);}
+  .warn ul{list-style:none;margin-top:4px;}
+  .warn li{font-size:12.5px;color:#6E4A14;padding:6px 0 6px 18px;position:relative;line-height:1.55;}
+  .warn li::before{content:"";position:absolute;left:2px;top:11px;width:5px;height:5px;border-radius:50%;background:var(--amber);}
+  .warn li b{color:var(--amber);font-weight:700;}
+
+  /* 푸터 */
+  .foot{
+    margin-top:18px;border-top:1px solid var(--line);padding-top:13px;
+    font-size:10px;line-height:1.7;color:#8A99A6;text-align:center;
+  }
+  .foot .strong{color:var(--ink-2);font-weight:600;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="metabar">
+    <span class="wm">오프라인 비공개 교육자료 · 유출 및 공유 금지</span>
+    <span class="pg">01 / 01</span>
+  </div>
+
+  <header class="head">
+    <div class="htags"><span class="tag-peel">필링 케어 전용</span><span class="eyebrow-in">Esthetic Protocol Guide</span></div>
+    <h1>리퀴드 마스크 소프트필<br>적용 순서 가이드</h1>
+    <div class="sub">마무리에 둘까, 발라놓고 다음 단계로 갈까?</div>
+
+    <div class="verdict">
+      <span class="ic">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2Z"/></svg>
+      </span>
+      <div>
+        <div class="vt">정해진 정답은 없습니다</div>
+        <div class="vd">한 제품에 ‘각질 정돈(전처리)’과 ‘씻어내지 않는 마무리’ 두 성격이 함께 있어, <b style="color:var(--ink)">프로그램의 목적이 순서를 결정</b>합니다.</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 제품 포지셔닝 -->
+  <section class="pos">
+    <div class="pos-eye">묵은 각질 케어 → 속광 케어</div>
+    <div class="pos-h">필링 케어의 정석,<br>속광 마무리까지 한 번에</div>
+    <div class="pos-flow">
+      <span class="pf-step">묵은 각질 정돈</span>
+      <span class="pf-arr">→</span>
+      <span class="pf-step">매끄러운 피부결</span>
+      <span class="pf-arr">→</span>
+      <span class="pf-step hi">자연스러운 속광</span>
+    </div>
+    <div class="pos-note">PHA + 식물 유래 세포외소포 <b>6세대 소프트필</b> — 묵은 각질을 부드럽게 정돈해 속광 마무리로 이어주는 <b>속광 케어의 핵심 솔루션</b></div>
+  </section>
+
+  <div class="branch"><span>목적에 따라 두 갈래</span></div>
+
+  <!-- 루트 A -->
+  <section class="card">
+    <div class="card-h">
+      <div class="badge a">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4Z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/></svg>
+      </div>
+      <div>
+        <div class="role">Route A · 전처리</div>
+        <div class="name">발라놓고 방치 → 다음 단계</div>
+      </div>
+    </div>
+    <div class="goal">목적 — 각질 정돈으로 흡수 환경 먼저 정돈</div>
+    <div class="flow">클렌징 → <b>리퀴드 마스크(붓 도포·약 10분 방치)</b> → 엑소토카인 등 기능성 앰플 → 마무리</div>
+    <div class="why">PHA가 표면 각질을 부드럽게 정돈하면, <b>후속 기능성 성분이 표피(각질층) 표면에 더 고르게 안착</b>할 수 있는 환경이 만들어집니다.</div>
+    <div class="fit"><b>적합</b> · 각질이 두껍거나, 부스터 흡수 환경을 먼저 잡고 싶은 프로그램</div>
+  </section>
+
+  <!-- 루트 B -->
+  <section class="card">
+    <div class="card-h">
+      <div class="badge b">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+      </div>
+      <div>
+        <div class="role">Route B · 마무리</div>
+        <div class="name">마지막에 발라 그대로 마무리</div>
+      </div>
+    </div>
+    <div class="goal">목적 — 잔류 시간 확보 · 진정 · 속광 마무리</div>
+    <div class="flow">메인 관리(초음파 등) → 진정 → <b>리퀴드 마스크(씻어내지 않음)</b> → 그대로 귀가</div>
+    <div class="why">계면활성제 없이 씻어내지 않는 제형이라, 앞서 올린 성분 위에 <b>얇은 막을 형성해 표피 잔류 시간(occlusion)을 확보</b>하고 진정·속광 마무리까지 함께 잡아줍니다.</div>
+    <div class="fit"><b>적합</b> · 흡수 보조 도구를 따로 쓰지 않아 잔류 시간을 차폐로 보완해야 하는 프로그램</div>
+  </section>
+
+  <!-- 판단 기준 -->
+  <section class="rule">
+    <div class="t">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M3 7h18"/><path d="M6 7l-3 6a3 3 0 0 0 6 0Z"/><path d="M18 7l-3 6a3 3 0 0 0 6 0Z"/></svg>
+      한눈에 보는 판단 기준
+    </div>
+    <div class="row">
+      <span class="cond">흡수 환경을 <b>먼저 정돈</b>하고 싶다</span>
+      <span class="arrow">→</span>
+      <span class="pick">앞단계</span>
+    </div>
+    <div class="row">
+      <span class="cond">잔류·진정·속광 <b>마무리</b>가 목적이다</span>
+      <span class="arrow">→</span>
+      <span class="pick">마지막</span>
+    </div>
+    <div class="row">
+      <span class="cond">두 가지를 <b>모두</b> 살리고 싶다</span>
+      <span class="arrow">→</span>
+      <span class="pick">앞 짧게 + 진정 마무리</span>
+    </div>
+  </section>
+
+  <!-- 주의 -->
+  <section class="card warn">
+    <div class="card-h">
+      <div class="badge warn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+      </div>
+      <div>
+        <div class="role">Compatibility &amp; Safety</div>
+        <div class="name">호환 · 안전 체크</div>
+      </div>
+    </div>
+    <ul>
+      <li>소프트필(PHA 각질 정돈)은 <b>자극이 큰 관리와 같은 날·같은 부위 병행 금지</b> (필링·강한 기계 관리 등)</li>
+      <li>장벽이 약해진 피부에는 <b>신중히 적용</b> — 소량·짧은 방치부터</li>
+      <li>PHA 특성상 <b>사용 후 자외선 차단 안내</b> 권장</li>
+    </ul>
+  </section>
+
+  <div class="foot">
+    <span class="strong">본 자료는 화장품 표시·광고법을 준수하여 작성되었으며, 의약품적 효능·효과를 표방하지 않습니다.</span><br>
+    숭실대학교 의공학 연구실 · 배원규 교수 연구실 · 에스테틱 전문가 교육용
+  </div>
+
+</div>
+</body>
+</html>
