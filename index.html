@@ -198,6 +198,26 @@
   .rules li{font-size:.88rem;color:var(--sub);padding-left:22px;position:relative;}
   .rules li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800;}
 
+  /* ---------- start (get started) ---------- */
+  .start-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+  .start-card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:24px 22px;display:flex;flex-direction:column;
+  }
+  .start-num{
+    font-size:.72rem;font-weight:800;letter-spacing:.16em;color:var(--gold);margin-bottom:10px;
+  }
+  .start-card h3{font-size:1.02rem;font-weight:800;color:var(--navy);margin-bottom:8px;}
+  .start-card p{font-size:.9rem;color:var(--sub);flex:1;}
+  .start-card b{color:var(--ink);font-weight:700;}
+  .start-btn{
+    margin-top:16px;display:block;text-align:center;
+    background:var(--navy);color:#fff;font-weight:700;font-size:.88rem;
+    border-radius:10px;padding:12px 16px;text-decoration:none;
+    transition:background .15s,transform .15s;
+  }
+  .start-btn:hover{background:var(--blue);transform:translateY(-1px);}
+
   /* ---------- footer ---------- */
   footer{
     margin-top:64px;padding:36px 0 44px;background:var(--navy);color:#9db8d4;
@@ -555,6 +575,38 @@
         <li>페이스에는 멘톨 함유 제품을 사용하지 않습니다</li>
         <li>익숙해지면 칼리파우더 부스팅, 프로그램 확장(DR.BAE 관리 프로그램 8종)으로 단계적으로 업그레이드</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= START ================= -->
+<section id="start">
+  <div class="wrap">
+    <div class="sec-label">Get Started</div>
+    <h2>닥터배 시작하기</h2>
+    <p class="lead">처음 도입을 검토하시는 원장님께는 아래 순서를 권해드립니다.</p>
+
+    <div class="start-grid">
+      <div class="start-card">
+        <div class="start-num">STEP 1</div>
+        <h3>데모키트로 먼저 테스트</h3>
+        <p>정식 도입 전, 제품을 직접 테스트해 보실 수 있는 <b>데모키트 구매</b>를 권해드리고 있습니다.</p>
+        <a class="start-btn" href="https://m.site.naver.com/2aTLN" target="_blank" rel="noopener">데모 테스트용 구매 링크</a>
+      </div>
+
+      <div class="start-card">
+        <div class="start-num">STEP 2</div>
+        <h3>정식 납품 문의</h3>
+        <p>데모 테스트 후 정식 납품을 원하시는 경우, <b>인스타그램 DM</b>으로 문의해 주세요. 주문하실 수 있는 링크를 추가로 안내해 드립니다.</p>
+        <a class="start-btn" href="https://www.instagram.com/dr.bae_medical/" target="_blank" rel="noopener">DM 문의 — @dr.bae_medical</a>
+      </div>
+
+      <div class="start-card">
+        <div class="start-num">STEP 3</div>
+        <h3>원장님들의 후기 참고</h3>
+        <p>닥터배를 기존에 사용하고 계신 <b>원장님들의 후기 모음</b>입니다. 샵에서 프로그램을 구성하실 때 참고하시면 좋습니다. 👍</p>
+        <a class="start-btn" href="https://m.site.naver.com/2aTWX" target="_blank" rel="noopener">원장님들 리뷰 모음</a>
+      </div>
     </div>
   </div>
 </section>
