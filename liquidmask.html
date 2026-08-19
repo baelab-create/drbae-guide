@@ -167,6 +167,22 @@
     font-size:10px;line-height:1.7;color:#8A99A6;text-align:center;
   }
   .foot .strong{color:var(--ink-2);font-weight:600;}
+
+  /* 제품 영상 */
+  .vid{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:14px 14px 12px;margin-top:12px;
+  }
+  .vid-eye{
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--ink-2);
+    text-transform:uppercase;text-align:center;margin-bottom:10px;
+  }
+  .vid video{
+    display:block;width:100%;max-width:300px;margin:0 auto;
+    aspect-ratio:9/16;border-radius:10px;background:#0E1C2B;
+  }
+  .vid-cap{margin-top:10px;font-size:11.5px;color:var(--ink-2);text-align:center;line-height:1.55;}
+  .vid-cap a{color:var(--blue);}
 </style>
 </head>
 <body>
@@ -205,6 +221,16 @@
       <span class="pf-step hi">자연스러운 속광</span>
     </div>
     <div class="pos-note">PHA + 식물 유래 세포외소포 <b>6세대 소프트필</b> — 묵은 각질을 부드럽게 정돈해 속광 마무리로 이어주는 <b>속광 케어의 핵심 솔루션</b></div>
+  </section>
+
+  <!-- 제품 영상 -->
+  <section class="vid">
+    <div class="vid-eye">Product Video</div>
+    <video controls playsinline preload="metadata" poster="assets/liquidmask-1.jpg">
+      <source src="assets/liquidmask-1.mp4" type="video/mp4">
+      <a href="assets/liquidmask-1.mp4">영상 파일 열기</a>
+    </video>
+    <div class="vid-cap">붓 도포 시연 · 닥터배 엑소토카인 리퀴드 마스크 소프트필 (10초 · 무음)</div>
   </section>
 
   <div class="branch"><span>목적에 따라 두 갈래</span></div>
