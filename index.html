@@ -96,6 +96,7 @@
     display:block;width:100%;max-width:640px;margin:16px auto 0;
     border-radius:10px;border:1px solid #b9d1e6;
   }
+  .paper-imgnote{margin-top:8px;text-align:center;font-size:.78rem;color:#7f97ad;}
   /* ---------- trust chips ---------- */
   .trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
   .trust span{
@@ -256,6 +257,35 @@
   }
   .start-btn.demo:hover{background:#b92c2c;}
 
+  /* ---------- mobile ---------- */
+  @media (max-width: 480px){
+    /* 아코디언 헤더: 제품명 한 줄 확보, 태그는 이름 아래로 */
+    summary{
+      display:grid;grid-template-columns:12px 1fr 22px;
+      column-gap:12px;row-gap:5px;align-items:center;
+    }
+    .dot{grid-column:1;grid-row:1;}
+    .p-name{grid-column:2;grid-row:1;}
+    .chev{grid-column:3;grid-row:1;}
+    .p-tag{grid-column:2;grid-row:2;justify-self:start;margin-left:0;font-size:.74rem;}
+
+    /* 카드 이중 패딩 축소 → 본문·이미지 폭 확보 */
+    .brand-intro{padding:18px 16px;}
+    .paper{padding:14px 12px;}
+    .flow-card{padding:16px 16px;}
+    .pull{padding:20px 18px;}
+    .mj-card{padding:22px 18px;}
+    .mj-entry{padding:16px 14px;}
+    .rules{padding:18px 16px;}
+    .addon{padding:18px 16px;}
+
+    /* 신뢰 칩 가독성 */
+    .trust span{font-size:.84rem;}
+
+    /* 마이크로젝션 문의 버튼: 전체 폭 블록 */
+    .mj-cta{display:block;text-align:center;border-radius:12px;}
+  }
+
   /* ---------- footer ---------- */
   footer{
     margin-top:64px;padding:36px 0 44px;background:var(--navy);color:#9db8d4;
@@ -293,7 +323,8 @@
         <p class="paper-lead">배원규 교수는 <b>피부 흡수(경피 전달) 분야에서 국제적으로 공신력을 인정받는 세계적인 학자</b>입니다.
         마이크로젝션의 원리는 배 교수가 <b>제1저자</b>로 국제 학술지에 발표한 논문에서 나왔으며,
         YTN · JTBC · 아리랑뉴스 등 주요 언론이 조명했습니다.</p>
-        <img class="paper-img" src="assets/news-press.jpg" alt="배원규 교수 뉴스 인터뷰 — YTN 사이언스, JTBC, 아리랑뉴스 보도 화면" loading="lazy">
+        <a href="assets/news-press.jpg" target="_blank" rel="noopener"><img class="paper-img" src="assets/news-press.jpg" alt="배원규 교수 뉴스 인터뷰 — YTN 사이언스, JTBC, 아리랑뉴스 보도 화면" loading="lazy"></a>
+        <p class="paper-imgnote">이미지를 누르면 크게 볼 수 있습니다</p>
       </div>
     </div>
 
