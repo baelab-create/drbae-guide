@@ -74,12 +74,10 @@
   }
   .paper-lead{font-size:.93rem;color:var(--sub);}
   .paper-lead b{color:var(--navy);}
-  .paper-meta{margin-top:14px;display:grid;gap:8px;}
-  .paper-meta div{font-size:.86rem;display:flex;gap:10px;}
-  .paper-meta b{flex:0 0 74px;color:var(--blue);font-weight:700;}
-  .paper-meta span{color:var(--sub);}
-  .paper-meta a{color:var(--blue);font-weight:600;text-decoration:none;}
-  .paper-meta a:hover{text-decoration:underline;}
+  .paper-img{
+    display:block;width:100%;max-width:640px;margin:16px auto 0;
+    border-radius:10px;border:1px solid #b9d1e6;
+  }
   .paper-key{
     margin-top:14px;padding-top:14px;border-top:1px dashed #b9d1e6;
     font-size:.92rem;color:var(--sub);
@@ -280,14 +278,11 @@
 
       <div class="paper">
         <div class="paper-badge">논문 근거</div>
-        <p class="paper-lead">배원규 교수는 <b>피부 흡수(경피 전달) 분야에서 국제적으로 공신력을 인정받는 학자</b>입니다.
-        마이크로젝션의 원리는 배 교수가 <b>제1저자</b>로 발표한 논문에서 나왔으며, YTN · JTBC 등 주요 언론에도 소개되었습니다.</p>
-        <div class="paper-meta">
-          <div><b>논문 제목</b><span>Snake fang-inspired stamping patch for transdermal delivery of liquid formulations</span></div>
-          <div><b>게재지</b><span>Science Translational Medicine (Science 자매지 · 중개의학 저널), 2019</span></div>
-          <div><b>DOI</b><span><a href="https://doi.org/10.1126/scitranslmed.aaw3329" target="_blank" rel="noopener">10.1126/scitranslmed.aaw3329</a></span></div>
-        </div>
-        <p class="paper-key">제목의 <b>'Stamping(도장 찍기)'</b>이 핵심입니다 — 뚫는 것이 아니라, <b>접촉시켜 흡수시키는</b> 방식입니다.</p>
+        <p class="paper-lead">배원규 교수는 <b>피부 흡수(경피 전달) 분야에서 국제적으로 공신력을 인정받는 세계적인 학자</b>입니다.
+        마이크로젝션의 원리는 배 교수가 <b>제1저자</b>로 국제 학술지에 발표한 논문에서 나왔으며,
+        YTN · JTBC · 아리랑뉴스 등 주요 언론이 조명했습니다.</p>
+        <img class="paper-img" src="assets/news-press.jpg" alt="배원규 교수 뉴스 인터뷰 — YTN 사이언스, JTBC, 아리랑뉴스 보도 화면" loading="lazy">
+        <p class="paper-key"><b>'Stamping(도장 찍기)'</b>이 핵심입니다 — 뚫는 것이 아니라, <b>접촉시켜 흡수시키는</b> 방식입니다.</p>
       </div>
     </div>
 
