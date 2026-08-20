@@ -63,6 +63,29 @@
   .brand-intro p + p{margin-top:8px;}
   .brand-intro b{color:var(--navy);font-weight:700;}
 
+  /* ---------- paper evidence ---------- */
+  .paper{
+    margin-top:18px;background:var(--sky);border:1px solid #cfe0f0;
+    border-radius:12px;padding:18px 20px;
+  }
+  .paper-badge{
+    display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.1em;
+    color:#fff;background:var(--blue);border-radius:6px;padding:4px 12px;margin-bottom:12px;
+  }
+  .paper-lead{font-size:.93rem;color:var(--sub);}
+  .paper-lead b{color:var(--navy);}
+  .paper-meta{margin-top:14px;display:grid;gap:8px;}
+  .paper-meta div{font-size:.86rem;display:flex;gap:10px;}
+  .paper-meta b{flex:0 0 74px;color:var(--blue);font-weight:700;}
+  .paper-meta span{color:var(--sub);}
+  .paper-meta a{color:var(--blue);font-weight:600;text-decoration:none;}
+  .paper-meta a:hover{text-decoration:underline;}
+  .paper-key{
+    margin-top:14px;padding-top:14px;border-top:1px dashed #b9d1e6;
+    font-size:.92rem;color:var(--sub);
+  }
+  .paper-key b{color:var(--navy);}
+
   /* ---------- trust chips ---------- */
   .trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
   .trust span{
@@ -254,6 +277,18 @@
       <p>서울대학교 의과대학과 스탠포드를 거쳐 현재 숭실대학교에 재직 중인 <b>배원규 교수</b>가
       정부 '창업선도대학' 프로젝트를 통해 설립한 <b>연구실 기업(Lab Startup)</b>에서 탄생했습니다.
       연구실의 기술이 유통 단계를 거치지 않고 브랜드로 직접 이어진, 출처가 분명한 제품입니다.</p>
+
+      <div class="paper">
+        <div class="paper-badge">논문 근거</div>
+        <p class="paper-lead">배원규 교수는 <b>피부 흡수(경피 전달) 분야에서 국제적으로 공신력을 인정받는 학자</b>입니다.
+        마이크로젝션의 원리는 배 교수가 <b>제1저자</b>로 발표한 논문에서 나왔으며, YTN · JTBC 등 주요 언론에도 소개되었습니다.</p>
+        <div class="paper-meta">
+          <div><b>논문 제목</b><span>Snake fang-inspired stamping patch for transdermal delivery of liquid formulations</span></div>
+          <div><b>게재지</b><span>Science Translational Medicine (Science 자매지 · 중개의학 저널), 2019</span></div>
+          <div><b>DOI</b><span><a href="https://doi.org/10.1126/scitranslmed.aaw3329" target="_blank" rel="noopener">10.1126/scitranslmed.aaw3329</a></span></div>
+        </div>
+        <p class="paper-key">제목의 <b>'Stamping(도장 찍기)'</b>이 핵심입니다 — 뚫는 것이 아니라, <b>접촉시켜 흡수시키는</b> 방식입니다.</p>
+      </div>
     </div>
 
     <div class="flow">
