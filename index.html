@@ -107,19 +107,6 @@
   .trust a{color:var(--blue);font-weight:700;text-decoration:none;}
   .trust a:hover{text-decoration:underline;}
 
-  /* ---------- why cards (flow) ---------- */
-  .flow{display:grid;gap:12px;counter-reset:step;}
-  .flow-card{
-    background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:20px 22px;display:flex;gap:16px;align-items:flex-start;
-  }
-  .flow-num{
-    flex:0 0 34px;height:34px;border-radius:50%;
-    background:var(--sky);color:var(--blue);font-weight:800;
-    display:flex;align-items:center;justify-content:center;font-size:.95rem;margin-top:2px;
-  }
-  .flow-card h3{font-size:1.02rem;font-weight:700;margin-bottom:4px;}
-  .flow-card p{font-size:.92rem;color:var(--sub);}
   .pull{
     margin-top:26px;background:var(--navy);color:#e8f0f9;border-radius:14px;
     padding:26px 28px;font-size:1.02rem;line-height:1.7;
@@ -244,37 +231,71 @@
   .rules li{font-size:.88rem;color:var(--sub);padding-left:22px;position:relative;}
   .rules li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800;}
 
+  /* ---------- quick nav (hero) ---------- */
+  .qnav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:24px;}
+  .qnav a{
+    font-size:.84rem;font-weight:700;color:#dce9f7;text-decoration:none;
+    border:1px solid rgba(255,255,255,.38);border-radius:999px;padding:8px 15px;
+    transition:background .15s;
+  }
+  .qnav a:hover{background:rgba(255,255,255,.14);}
+  .qnav a.qn-main{background:var(--gold);border-color:var(--gold);color:#1d2229;}
+  .qnav a.qn-main:hover{background:#cb9a38;}
+
+  /* ---------- 접이식 본문 (why / program) ---------- */
+  .flow-acc > summary{gap:13px;padding:15px 18px;align-items:center;}
+  .flow-acc .fa-num{
+    flex:0 0 30px;height:30px;border-radius:50%;background:var(--sky);color:var(--blue);
+    font-weight:800;font-size:.88rem;display:flex;align-items:center;justify-content:center;
+  }
+  .flow-acc .fa-ico{flex:0 0 auto;font-size:1.05rem;line-height:1;}
+  .flow-acc .fa-t{font-weight:700;font-size:.97rem;color:var(--ink);line-height:1.4;}
+  .flow-acc .p-body p{font-size:.92rem;color:var(--sub);}
+  .flow-acc .paper{margin-top:14px;background:transparent;border:0;padding:0;}
+  .flow-acc .trust{margin-top:12px;}
+
   /* ---------- start (get started) ---------- */
-  .start-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
-  .start-card{
+  .start-list{display:grid;gap:10px;max-width:720px;}
+  .stepcard{
+    display:flex;align-items:center;gap:14px;text-decoration:none;
     background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:24px 22px;display:flex;flex-direction:column;
+    padding:14px 16px;transition:border-color .15s,box-shadow .15s,transform .15s;
   }
-  .start-num{
-    font-size:.72rem;font-weight:800;letter-spacing:.16em;color:var(--gold);margin-bottom:10px;
+  .stepcard:hover{border-color:var(--blue);box-shadow:0 6px 18px rgba(14,42,71,.09);transform:translateY(-1px);}
+  .sc-num{
+    flex:0 0 46px;height:46px;border-radius:12px;background:var(--sky);color:var(--blue);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    font-size:.58rem;font-weight:800;letter-spacing:.1em;line-height:1.15;
   }
-  .start-card h3{font-size:1.02rem;font-weight:800;color:var(--navy);margin-bottom:8px;}
-  .start-card p{font-size:.9rem;color:var(--sub);flex:1;}
-  .start-card b{color:var(--ink);font-weight:700;}
-  .start-btn{
-    margin-top:16px;display:block;text-align:center;
-    background:var(--navy);color:#fff;font-weight:700;font-size:.88rem;
-    border-radius:10px;padding:12px 16px;text-decoration:none;
-    transition:background .15s,transform .15s;
+  .sc-num b{font-size:1.02rem;letter-spacing:0;font-weight:800;}
+  .sc-main{flex:1;min-width:0;}
+  .sc-t{display:block;font-size:.98rem;font-weight:800;color:var(--navy);line-height:1.35;}
+  .sc-d{display:block;font-size:.84rem;color:var(--sub);margin-top:3px;line-height:1.55;}
+  .sc-tag{
+    display:inline-block;margin-top:7px;font-size:.72rem;font-weight:700;
+    color:var(--blue);background:var(--sky);border:1px solid #cfe0f0;
+    border-radius:999px;padding:3px 10px;
   }
-  .start-btn:hover{background:var(--blue);transform:translateY(-1px);}
-  .start-btn.demo{
-    background:#d63535;font-size:.92rem;
-    box-shadow:0 4px 14px rgba(214,53,53,.35);
+  .sc-go{
+    flex:0 0 auto;width:28px;height:28px;border-radius:50%;
+    background:var(--navy);color:#fff;font-size:.95rem;font-weight:700;
+    display:flex;align-items:center;justify-content:center;line-height:1;
   }
-  .start-btn.demo:hover{background:#b92c2c;}
+  .stepcard.sc-demo{border-color:#f0c6c6;background:#fffaf9;}
+  .stepcard.sc-demo .sc-num{background:#fdecec;color:#c22e2e;}
+  .stepcard.sc-demo .sc-go{background:#d63535;}
+  .stepcard.sc-demo .sc-tag{color:#b03030;background:#fdecec;border-color:#f2d2d2;}
+  .stepcard.sc-order{border-color:#c9d9ea;}
+  .start-after{margin-top:14px;font-size:.85rem;color:var(--sub);max-width:720px;}
+  .start-after a{color:var(--blue);font-weight:700;text-decoration:none;}
+
   .start-note{
     display:flex;gap:10px;align-items:flex-start;
     background:#fff7e6;border:1px solid #e8d199;border-left:4px solid var(--gold);
-    border-radius:12px;padding:14px 16px;margin:-10px 0 24px;max-width:760px;
+    border-radius:12px;padding:13px 15px;margin:0 0 16px;max-width:720px;
   }
   .start-note .ico{font-size:1.05rem;line-height:1.4;flex:none;}
-  .start-note p{font-size:.88rem;color:var(--sub);line-height:1.65;}
+  .start-note p{font-size:.85rem;color:var(--sub);line-height:1.6;}
   .start-note b{color:var(--ink);font-weight:700;}
 
   /* ---------- mobile ---------- */
@@ -292,7 +313,6 @@
     /* 카드 이중 패딩 축소 → 본문·이미지 폭 확보 */
     .brand-intro{padding:18px 16px;}
     .paper{padding:14px 12px;}
-    .flow-card{padding:16px 16px;}
     .pull{padding:20px 18px;}
     .mj-card{padding:22px 18px;}
     .mj-entry{padding:16px 14px;}
@@ -304,6 +324,29 @@
 
     /* 마이크로젝션 문의 버튼: 전체 폭 블록 */
     .mj-cta{display:block;text-align:center;border-radius:12px;}
+
+    /* 세로 리듬 축소 — 한 화면에 담기 */
+    header{padding:44px 0 38px;}
+    section{padding:40px 0 6px;}
+    h2{margin-bottom:15px;}
+    .lead{font-size:.92rem;margin-bottom:16px;}
+    .brand-intro{margin-bottom:14px;}
+    .pull{margin-top:18px;font-size:.95rem;padding:18px 16px;}
+    .scalp-head{margin-top:34px;}
+    .qnav a{font-size:.8rem;padding:7px 13px;}
+
+    /* 접이식 본문 헤더는 grid가 아니라 flex 유지 */
+    .flow-acc > summary{display:flex;padding:14px 15px;}
+    .flow-acc .fa-t{font-size:.92rem;}
+    .flow-acc .p-body{padding:2px 15px 16px;}
+
+    /* 시작하기 카드 */
+    .stepcard{padding:13px 13px;gap:11px;}
+    .sc-num{flex:0 0 42px;height:42px;border-radius:11px;}
+    .sc-t{font-size:.93rem;}
+    .sc-d{font-size:.8rem;}
+    .start-note{padding:12px 13px;}
+    .start-note p{font-size:.81rem;}
   }
 
   /* ---------- footer ---------- */
@@ -431,6 +474,13 @@ details[open] .dbc-native,
       <small>에스테틱 전문가를 위한 페이스 라인업 6종 · 마이크로젝션 입점 안내</small>
     </h1>
     <p class="hero-note">숭실대학교 의공학 연구실에서 출발한 전문가용 스킨부스터</p>
+
+    <nav class="qnav" aria-label="바로가기">
+      <a class="qn-main" href="#start">주문 · 시작하기</a>
+      <a href="#lineup">제품 9종</a>
+      <a href="#program">관리 프로그램</a>
+      <a href="#microjection">마이크로젝션</a>
+    </nav>
   </div>
 </header>
 
@@ -446,6 +496,9 @@ details[open] .dbc-native,
       정부 '창업선도대학' 프로젝트를 통해 설립한 <b>연구실 기업(Lab Startup)</b>에서 탄생했습니다.
       연구실의 기술이 유통 단계를 거치지 않고 브랜드로 직접 이어진, 출처가 분명한 제품입니다.</p>
 
+      <details class="flow-acc" style="margin-top:16px;margin-bottom:0;">
+        <summary><span class="fa-ico">📄</span><span class="fa-t">논문 · 언론 보도 근거 보기</span></summary>
+        <div class="p-body">
       <div class="paper">
         <div class="paper-badge">논문 근거</div>
         <p class="paper-lead">배원규 교수는 <b>피부 과학(경피 전달) 분야에서 국제적으로 공신력을 인정받는 학자</b>입니다.
@@ -455,54 +508,55 @@ details[open] .dbc-native,
         <a href="assets/news-press.jpg" target="_blank" rel="noopener"><img class="paper-img" src="assets/news-press.jpg" alt="배원규 교수 뉴스 인터뷰 — YTN 사이언스, JTBC, 아리랑뉴스 보도 화면" loading="lazy"></a>
         <p class="paper-imgnote">이미지를 누르면 크게 볼 수 있습니다</p>
       </div>
+        </div>
+      </details>
     </div>
 
-    <div class="flow">
-      <div class="flow-card">
-        <div class="flow-num">1</div>
-        <div>
-          <h3>스킨 롱제비티(Skin Longevity) 시대</h3>
-          <p>피부 관리의 흐름이 일회성 이벤트 관리에서 피부 컨디션을 길게 유지하는 꾸준한 케어로 이동하고 있습니다.</p>
+    <p class="lead" style="margin-bottom:14px;">아래 다섯 가지를 눌러 자세한 내용을 보실 수 있습니다.</p>
+
+    <details class="flow-acc">
+      <summary><span class="fa-num">1</span><span class="fa-t">스킨 롱제비티(Skin Longevity) 시대</span></summary>
+      <div class="p-body">
+        <p>피부 관리의 흐름이 일회성 이벤트 관리에서 피부 컨디션을 길게 유지하는 꾸준한 케어로 이동하고 있습니다.</p>
+      </div>
+    </details>
+
+    <details class="flow-acc">
+      <summary><span class="fa-num">2</span><span class="fa-t">스킨부스터, 메인 관리로 성장</span></summary>
+      <div class="p-body">
+        <p>그 중심에서 스킨부스터는 옵션이 아닌 관리 프로그램의 메인으로 자리 잡았습니다. 어떤 스킨부스터를 쓰는지가 곧 샵의 수준을 보여줍니다.</p>
+      </div>
+    </details>
+
+    <details class="flow-acc">
+      <summary><span class="fa-num">3</span><span class="fa-t">개발자가 공개된 전문가용 브랜드</span></summary>
+      <div class="p-body">
+        <p>닥터배는 연구자와 개발자가 공개되어 있는 브랜드입니다. 숭실대학교 의공학 연구실(배원규 교수)의 연구가 ㈜배랩을 통해 시장으로 직접 이어졌습니다. 원료(식물 유래 세포외소포, EV)와 도포 방식 모두 출처를 설명할 수 있습니다.</p>
+      </div>
+    </details>
+
+    <details class="flow-acc">
+      <summary><span class="fa-num">4</span><span class="fa-t">고객에게 보여지는 선택</span></summary>
+      <div class="p-body">
+        <p>제품은 고객의 눈앞에서 사용됩니다. 에스테틱 전문가(샵 원장)가 개발자가 공개된 검증 가능한 제품을 까다롭게 골랐다는 사실 자체가 샵의 전문성과 브랜딩이 됩니다. 닥터배는 그 선택을 뒷받침하는 원칙을 지킵니다.</p>
+        <div class="trust">
+          <span>개발자 인스타그램 공개 — <a href="https://www.instagram.com/dr.bae_medical/" target="_blank" rel="noopener">@dr.bae_medical</a></span>
+          <span>공동구매 진행하지 않음 — 가격 질서 보호</span>
+          <span>5년 이상 가격 변동 없음</span>
+          <span>유럽 등 선진 메디컬 시장 수출</span>
         </div>
       </div>
-      <div class="flow-card">
-        <div class="flow-num">2</div>
-        <div>
-          <h3>스킨부스터, 메인 관리로 성장</h3>
-          <p>그 중심에서 스킨부스터는 옵션이 아닌 관리 프로그램의 메인으로 자리 잡았습니다. 어떤 스킨부스터를 쓰는지가 곧 샵의 수준을 보여줍니다.</p>
-        </div>
+    </details>
+
+    <details class="flow-acc">
+      <summary><span class="fa-num">5</span><span class="fa-t">8년간 무너지지 않은 가격과 유통</span></summary>
+      <div class="p-body">
+        <p>닥터배는 8년 동안 가격이 무너진 적도, 유통 질서가 무너진 적도 없습니다.
+        인플루언서 공동구매 제안은 모두 거절해 왔습니다 — 전문가 라인의 가치를 지키기 위해서이며, 인플루언서 공구용 브랜드는 별도로 운영합니다.
+        메인 제품인 <b>엑소토카인 블루 · 피디로엔 핑크</b>는 2021년부터 지금까지 지속적으로 유통 중이며, 단종 계획이 없습니다.
+        한 번 도입한 프로그램을 오래 운영할 수 있다는 뜻입니다.</p>
       </div>
-      <div class="flow-card">
-        <div class="flow-num">3</div>
-        <div>
-          <h3>개발자가 공개된 전문가용 브랜드</h3>
-          <p>닥터배는 연구자와 개발자가 공개되어 있는 브랜드입니다. 숭실대학교 의공학 연구실(배원규 교수)의 연구가 ㈜배랩을 통해 시장으로 직접 이어졌습니다. 원료(식물 유래 세포외소포, EV)와 도포 방식 모두 출처를 설명할 수 있습니다.</p>
-        </div>
-      </div>
-      <div class="flow-card">
-        <div class="flow-num">4</div>
-        <div>
-          <h3>고객에게 보여지는 선택</h3>
-          <p>제품은 고객의 눈앞에서 사용됩니다. 에스테틱 전문가(샵 원장)가 개발자가 공개된 검증 가능한 제품을 까다롭게 골랐다는 사실 자체가 샵의 전문성과 브랜딩이 됩니다. 닥터배는 그 선택을 뒷받침하는 원칙을 지킵니다.</p>
-          <div class="trust">
-            <span>개발자 인스타그램 공개 — <a href="https://www.instagram.com/dr.bae_medical/" target="_blank" rel="noopener">@dr.bae_medical</a></span>
-            <span>공동구매 진행하지 않음 — 가격 질서 보호</span>
-            <span>5년 이상 가격 변동 없음</span>
-            <span>유럽 등 선진 메디컬 시장 수출</span>
-          </div>
-        </div>
-      </div>
-      <div class="flow-card">
-        <div class="flow-num">5</div>
-        <div>
-          <h3>8년간 무너지지 않은 가격과 유통</h3>
-          <p>닥터배는 8년 동안 가격이 무너진 적도, 유통 질서가 무너진 적도 없습니다.
-          인플루언서 공동구매 제안은 모두 거절해 왔습니다 — 전문가 라인의 가치를 지키기 위해서이며, 인플루언서 공구용 브랜드는 별도로 운영합니다.
-          메인 제품인 <b>엑소토카인 블루 · 피디로엔 핑크</b>는 2021년부터 지금까지 지속적으로 유통 중이며, 단종 계획이 없습니다.
-          한 번 도입한 프로그램을 오래 운영할 수 있다는 뜻입니다.</p>
-        </div>
-      </div>
-    </div>
+    </details>
 
     <div class="pull">
       "무엇을 바르는가"만큼 <strong>"누가 만들었고, 어떻게 고르게 도포되는가"</strong>를 설명할 수 있어야 전문가입니다.
@@ -517,35 +571,47 @@ details[open] .dbc-native,
   <div class="wrap">
     <div class="sec-label">Get Started</div>
     <h2>닥터배 시작하기</h2>
-    <p class="lead">처음 도입을 검토하시는 원장님께는 아래 순서를 권해드립니다.</p>
+    <p class="lead">아래 <b>세 단계</b>가 도입의 전부입니다. 각 카드를 누르면 해당 페이지로 바로 이동합니다.</p>
 
     <div class="start-note">
       <span class="ico">🔒</span>
       <p><b>공유하지 말아 주세요.</b> 이 페이지의 구매·납품 링크는 사업자 등록을 마치신 <b>정식 원장님께만</b> 안내드리고 있습니다. 🙏 건전한 유통 문화를 지키기 위한 안내이니, 링크를 외부(단톡방·중고거래·SNS 등)에 공유하지 말아 주시기를 부탁드립니다. 🤝</p>
     </div>
 
-    <div class="start-grid">
-      <div class="start-card">
-        <div class="start-num">STEP 1</div>
-        <h3>데모키트로 먼저 테스트</h3>
-        <p>정식 도입 전, 제품을 직접 테스트해 보실 수 있는 <b>데모키트 구매</b>를 권해드리고 있습니다.</p>
-        <a class="start-btn demo" href="https://m.site.naver.com/2aTLN" target="_blank" rel="noopener">데모 테스트용 구매 링크</a>
-      </div>
+    <div class="start-list">
+      <a class="stepcard sc-demo" href="https://m.site.naver.com/2aTLN" target="_blank" rel="noopener">
+        <span class="sc-num">STEP<b>1</b></span>
+        <span class="sc-main">
+          <span class="sc-t">데모키트로 먼저 테스트</span>
+          <span class="sc-d">정식 도입 전, 제품을 직접 써 보실 수 있는 소량 구성입니다.</span>
+          <span class="sc-tag">여기서 시작하세요</span>
+        </span>
+        <span class="sc-go" aria-hidden="true">›</span>
+      </a>
 
-      <div class="start-card">
-        <div class="start-num">STEP 2</div>
-        <h3>정식 납품 문의</h3>
-        <p>데모 키트를 사용해 보시고 마음에 드시는 경우, <b>정식 납품을 위한 링크</b>입니다. <b>가격 및 프로모션 구성</b>이 안내되어 있습니다.</p>
-        <a class="start-btn" href="https://smartstore.naver.com/drbae/products/6338720100" target="_blank" rel="noopener">정식 납품 주문 링크</a>
-      </div>
+      <a class="stepcard sc-order" href="https://smartstore.naver.com/drbae/products/6338720100" target="_blank" rel="noopener">
+        <span class="sc-num">STEP<b>2</b></span>
+        <span class="sc-main">
+          <span class="sc-t">정식 납품 주문</span>
+          <span class="sc-d">데모를 써 보시고 마음에 드시면, 이 링크로 정식 납품을 진행합니다.</span>
+          <span class="sc-tag">가격 · 프로모션 구성 안내</span>
+        </span>
+        <span class="sc-go" aria-hidden="true">›</span>
+      </a>
 
-      <div class="start-card">
-        <div class="start-num">STEP 3</div>
-        <h3>원장님들의 후기 참고</h3>
-        <p>닥터배를 기존에 사용하고 계신 <b>원장님들의 후기 모음</b>입니다. 샵에서 프로그램을 구성하실 때 참고하시면 좋습니다. 👍</p>
-        <a class="start-btn" href="https://m.site.naver.com/2aTWX" target="_blank" rel="noopener">원장님들 리뷰 모음</a>
-      </div>
+      <a class="stepcard" href="https://m.site.naver.com/2aTWX" target="_blank" rel="noopener">
+        <span class="sc-num">STEP<b>3</b></span>
+        <span class="sc-main">
+          <span class="sc-t">원장님들의 후기 참고</span>
+          <span class="sc-d">이미 사용 중인 원장님들의 후기입니다. 프로그램 구성에 참고하세요.</span>
+          <span class="sc-tag">참고 자료</span>
+        </span>
+        <span class="sc-go" aria-hidden="true">›</span>
+      </a>
     </div>
+
+    <p class="start-after">STEP 1 · 2 · 3 링크는 모두 <b>네이버 스마트스토어</b>로 연결됩니다. 그 밖의 문의는 인스타그램
+    <a href="https://www.instagram.com/dr.bae_medical/" target="_blank" rel="noopener">@dr.bae_medical</a> DM으로 주세요.</p>
   </div>
 </section>
 
@@ -763,6 +829,9 @@ details[open] .dbc-native,
     <h2>가장 기본적인 관리 프로그램 예시</h2>
     <p class="lead">처음 도입하는 샵을 위한 진정 기본케어 구성입니다. 미용기기는 초음파 · 갈바닉 범위에서 사용합니다. (약 50~60분)</p>
 
+    <details class="flow-acc">
+      <summary><span class="fa-ico">🧴</span><span class="fa-t">기본 프로그램 7단계 펼쳐 보기 (약 50~60분)</span></summary>
+      <div class="p-body">
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
@@ -819,17 +888,23 @@ details[open] .dbc-native,
         </div>
       </div>
     </div>
+      </div>
+    </details>
 
-    <div class="rules">
-      <h3>첫 사용 전 기억할 기본 원칙</h3>
-      <ul>
+    <details class="flow-acc" style="margin-top:14px;">
+      <summary><span class="fa-ico">✅</span><span class="fa-t">첫 사용 전 기억할 기본 원칙</span></summary>
+      <div class="p-body">
+        <div class="rules" style="margin-top:14px;background:transparent;border:0;padding:0;">
+        <ul>
         <li>바이알 제품(블루 · 핑크 · 리퀴드마스크 · 토코포르테 · 칼리)은 단회용 밀봉 — 개봉 당일 1병 기준 소진</li>
         <li>칼리파우더는 단독 사용 금지, <strong>에센스겔과 직접 혼합만 금지</strong> (용해는 블루 · 핑크 · 토코포르테 · 리퀴드 마스크 · 블랙 5종에 가능)</li>
         <li>토코포르테 에어건은 항상 프로그램의 마지막 쿨링 단계</li>
         <li>페이스에는 멘톨 함유 제품을 사용하지 않습니다</li>
         <li>익숙해지면 칼리파우더 부스팅, 프로그램 확장(DR.BAE 관리 프로그램 8종)으로 단계적으로 업그레이드</li>
       </ul>
-    </div>
+        </div>
+      </div>
+    </details>
   </div>
 </section>
 
