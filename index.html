@@ -268,6 +268,19 @@
     box-shadow:0 4px 14px rgba(214,53,53,.35);
   }
   .start-btn.demo:hover{background:#b92c2c;}
+  .start-btn.sub{
+    margin-top:8px;background:#fff;color:var(--navy);
+    border:1px solid var(--line);font-size:.84rem;font-weight:700;
+  }
+  .start-btn.sub:hover{background:var(--sky);color:var(--navy);}
+  .start-note{
+    display:flex;gap:10px;align-items:flex-start;
+    background:#fff7e6;border:1px solid #e8d199;border-left:4px solid var(--gold);
+    border-radius:12px;padding:14px 16px;margin:-10px 0 24px;max-width:760px;
+  }
+  .start-note .ico{font-size:1.05rem;line-height:1.4;flex:none;}
+  .start-note p{font-size:.88rem;color:var(--sub);line-height:1.65;}
+  .start-note b{color:var(--ink);font-weight:700;}
 
   /* ---------- mobile ---------- */
   @media (max-width: 480px){
@@ -511,6 +524,11 @@ details[open] .dbc-native,
     <h2>닥터배 시작하기</h2>
     <p class="lead">처음 도입을 검토하시는 원장님께는 아래 순서를 권해드립니다.</p>
 
+    <div class="start-note">
+      <span class="ico">🔒</span>
+      <p><b>공유하지 말아 주세요.</b> 이 페이지의 구매·납품 링크는 사업자 등록을 마치신 <b>정식 원장님께만</b> 안내드리고 있습니다. 🙏 건전한 유통 문화를 지키기 위한 안내이니, 링크를 외부(단톡방·중고거래·SNS 등)에 공유하지 말아 주시기를 부탁드립니다. 🤝</p>
+    </div>
+
     <div class="start-grid">
       <div class="start-card">
         <div class="start-num">STEP 1</div>
@@ -522,8 +540,9 @@ details[open] .dbc-native,
       <div class="start-card">
         <div class="start-num">STEP 2</div>
         <h3>정식 납품 문의</h3>
-        <p>데모 테스트 후 정식 납품을 원하시는 경우, <b>인스타그램 DM</b>으로 문의해 주세요. 주문하실 수 있는 링크를 추가로 안내해 드립니다.</p>
-        <a class="start-btn" href="https://www.instagram.com/dr.bae_medical/" target="_blank" rel="noopener">DM 문의 — @dr.bae_medical</a>
+        <p>데모 키트를 사용해 보시고 마음에 드시는 경우, <b>정식 납품을 위한 링크</b>입니다. <b>가격 및 프로모션 구성</b>이 안내되어 있습니다.</p>
+        <a class="start-btn" href="https://smartstore.naver.com/drbae/products/6338720100" target="_blank" rel="noopener">정식 납품 주문 링크</a>
+        <a class="start-btn sub" href="https://www.instagram.com/dr.bae_medical/" target="_blank" rel="noopener">문의 — 인스타그램 DM @dr.bae_medical</a>
       </div>
 
       <div class="start-card">
