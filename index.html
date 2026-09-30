@@ -541,6 +541,9 @@ details[open]{box-shadow:var(--neu-in);}
 h2{color:var(--navy);}
 
 /* ---------- 칩 · 배지: 작게 떠 있는 면 ---------- */
+/* 태그와 '클릭' 배지가 각각 auto 여백을 가지면 남는 공간을 반씩 나눠 가져
+   태그가 가운데에 뜬다 — 태그만 오른쪽으로 밀고 배지는 바로 뒤에 붙인다 */
+.p-tag ~ .dbc-click,.p-tag ~ .dbc-native{margin-left:0 !important;}
 .p-tag,.trust span,.sc-tag,.step .use,.mj-badge{
   background:var(--neu-bg);border:0;color:var(--sub);box-shadow:var(--neu-out-sm);
 }
