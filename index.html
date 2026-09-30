@@ -608,6 +608,21 @@ details[open] > summary .dbc-click,details[open] .dbc-native{
 .mj-alert b{color:#8A2018;}
 .mj-alert-badge{background:var(--key);color:#fff;}
 
+/* ---------- 붉은 색연필 강조 (손으로 그은 느낌) ---------- */
+.pen-star{
+  display:inline-block;width:1.05em;height:1.05em;margin-right:5px;vertical-align:-.14em;
+  transform:rotate(-12deg);background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.6l2.7 6.2 6.7.6-5.1 4.4 1.6 6.6L12 16.9 6.1 20.4l1.6-6.6L2.6 9.4l6.7-.6z' fill='none' stroke='%23D23B2E' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/contain;
+}
+.pen-circle{position:relative;display:inline-block;padding:1px 7px;color:var(--navy);}
+.pen-circle::after{
+  content:"";position:absolute;left:-5px;right:-5px;top:-7px;bottom:-7px;pointer-events:none;
+  background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 70' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='%23D23B2E' stroke-linecap='round'%3E%3Cpath d='M178 18C168 8 120 3 78 5 32 8 10 22 13 40c3 17 58 27 106 25 44-2 70-13 69-29-1-9-14-17-31-22' stroke-width='3.2' opacity='.92'/%3E%3Cpath d='M170 14C156 7 112 4 74 8 34 12 16 25 18 40' stroke-width='1.8' opacity='.45'/%3E%3C/g%3E%3C/svg%3E") no-repeat center/100% 100%;transform:rotate(-1.2deg);
+}
+.pen-under{
+  background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='%23D23B2E' stroke-linecap='round'%3E%3Cpath d='M3 8C36 4 70 11 104 7c30-4 62 3 93-2' stroke-width='3' opacity='.9'/%3E%3Cpath d='M6 12c34-3 66 4 100 1 28-3 58 2 88-2' stroke-width='1.6' opacity='.5'/%3E%3C/g%3E%3C/svg%3E") no-repeat left bottom/100% .5em;padding-bottom:.2em;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+}
+
 /* ---------- 공인 파트너 3x3 ---------- */
 .partner-wrap{margin-top:26px;}
 .partner-h{font-size:1.02rem;font-weight:800;margin-bottom:6px;}
@@ -821,7 +836,7 @@ footer b{color:#EDE7DA;}
 <section id="microjection">
   <div class="wrap">
     <div class="sec-label">Microjection · 입점 안내</div>
-    <h2>마이크로젝션 — 공인 파트너를 통한 교육 · 납품</h2>
+    <h2>마이크로젝션 / 공인 파트너 교육 후 납품 가능</h2>
 
     <div class="mj-card">
       <div class="mj-badge">MICRO + PROJECTION</div>
@@ -833,7 +848,7 @@ footer b{color:#EDE7DA;}
         <h3>납품 안내</h3>
         <ul>
           <li><b>스킨부스터</b> — 데모 테스트 후 <b>교육 없이 입점 가능</b>합니다.</li>
-          <li><b>마이크로젝션</b> — 전국 <b>닥터배 공인 파트너 9인</b>을 통해서만 납품해 드립니다.</li>
+          <li><span class="pen-star" aria-hidden="true"></span><b class="pen-circle">마이크로젝션</b> — 전국 <b class="pen-under">닥터배 공인 파트너 9인</b>을 통해서만 납품해 드립니다.</li>
           <li>공인 파트너가 <b>교육과 멘토링</b>을 진행하고, 그 과정을 마치신 뒤 기기가 납품됩니다.</li>
           <li>대상: <b>닥터배 스킨부스터 라인을 메인으로 활용하고 있는 샵</b></li>
         </ul>
