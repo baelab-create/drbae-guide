@@ -613,12 +613,14 @@ details[open] > summary .dbc-click,details[open] .dbc-native{
   display:inline-block;width:1.05em;height:1.05em;margin-right:5px;vertical-align:-.14em;
   transform:rotate(-12deg);background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.6l2.7 6.2 6.7.6-5.1 4.4 1.6 6.6L12 16.9 6.1 20.4l1.6-6.6L2.6 9.4l6.7-.6z' fill='none' stroke='%23D23B2E' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/contain;
 }
-.pen-circle{position:relative;display:inline-block;padding:1px 7px;color:var(--navy);}
+.pen-circle{position:relative;display:inline-block;padding:1px 7px;margin:0 -3px;color:var(--navy);font-weight:700;}
 .pen-circle::after{
   content:"";position:absolute;left:-5px;right:-5px;top:-7px;bottom:-7px;pointer-events:none;
   background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 70' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='%23D23B2E' stroke-linecap='round'%3E%3Cpath d='M178 18C168 8 120 3 78 5 32 8 10 22 13 40c3 17 58 27 106 25 44-2 70-13 69-29-1-9-14-17-31-22' stroke-width='3.2' opacity='.92'/%3E%3Cpath d='M170 14C156 7 112 4 74 8 34 12 16 25 18 40' stroke-width='1.8' opacity='.45'/%3E%3C/g%3E%3C/svg%3E") no-repeat center/100% 100%;transform:rotate(-1.2deg);
 }
+.flow-acc .p-body b{color:var(--navy);}
 .pen-under{
+  color:var(--navy);font-weight:700;
   background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='%23D23B2E' stroke-linecap='round'%3E%3Cpath d='M3 8C36 4 70 11 104 7c30-4 62 3 93-2' stroke-width='3' opacity='.9'/%3E%3Cpath d='M6 12c34-3 66 4 100 1 28-3 58 2 88-2' stroke-width='1.6' opacity='.5'/%3E%3C/g%3E%3C/svg%3E") no-repeat left bottom/100% .5em;padding-bottom:.2em;
   -webkit-box-decoration-break:clone;box-decoration-break:clone;
 }
@@ -734,28 +736,28 @@ footer b{color:#EDE7DA;}
     <details class="flow-acc">
       <summary><span class="fa-num">1</span><span class="fa-t">스킨 롱제비티(Skin Longevity) 시대</span></summary>
       <div class="p-body">
-        <p>피부 관리의 흐름이 일회성 이벤트 관리에서 피부 컨디션을 길게 유지하는 꾸준한 케어로 이동하고 있습니다.</p>
+        <p>피부 관리의 흐름이 일회성 이벤트 관리에서 피부 컨디션을 길게 유지하는 <b class="pen-under">꾸준한 케어로 이동</b>하고 있습니다.</p>
       </div>
     </details>
 
     <details class="flow-acc">
       <summary><span class="fa-num">2</span><span class="fa-t">스킨부스터, 메인 관리로 성장</span></summary>
       <div class="p-body">
-        <p>그 중심에서 스킨부스터는 옵션이 아닌 관리 프로그램의 메인으로 자리 잡았습니다. 어떤 스킨부스터를 쓰는지가 곧 샵의 수준을 보여줍니다.</p>
+        <p>그 중심에서 <span class="pen-star" aria-hidden="true"></span><b class="pen-circle">스킨부스터는</b> 옵션이 아닌 관리 프로그램의 메인으로 자리 잡았습니다. 어떤 스킨부스터를 쓰는지가 곧 <b class="pen-under">샵의 수준을 보여줍니다</b>.</p>
       </div>
     </details>
 
     <details class="flow-acc">
       <summary><span class="fa-num">3</span><span class="fa-t">개발자가 공개된 전문가용 브랜드</span></summary>
       <div class="p-body">
-        <p>닥터배는 연구자와 개발자가 공개되어 있는 브랜드입니다. 숭실대학교 의공학 연구실(배원규 교수)의 연구가 ㈜배랩을 통해 시장으로 직접 이어졌습니다. 원료(식물 유래 세포외소포, EV)와 도포 방식 모두 출처를 설명할 수 있습니다.</p>
+        <p>닥터배는 <b class="pen-under">연구자와 개발자가 공개되어 있는</b> 브랜드입니다. 숭실대학교 의공학 연구실(배원규 교수)의 연구가 ㈜배랩을 통해 시장으로 직접 이어졌습니다. 원료(식물 유래 세포외소포, EV)와 도포 방식 모두 출처를 설명할 수 있습니다.</p>
       </div>
     </details>
 
     <details class="flow-acc">
       <summary><span class="fa-num">4</span><span class="fa-t">고객에게 보여지는 선택</span></summary>
       <div class="p-body">
-        <p>제품은 고객의 눈앞에서 사용됩니다. 에스테틱 전문가(샵 원장)가 개발자가 공개된 검증 가능한 제품을 까다롭게 골랐다는 사실 자체가 샵의 전문성과 브랜딩이 됩니다. 닥터배는 그 선택을 뒷받침하는 원칙을 지킵니다.</p>
+        <p>제품은 고객의 눈앞에서 사용됩니다. 에스테틱 전문가(샵 원장)가 개발자가 공개된 검증 가능한 제품을 <b class="pen-under">까다롭게 골랐다는 사실 자체가</b> <b class="pen-circle">샵의 전문성과 브랜딩이 됩니다</b>. 닥터배는 그 선택을 뒷받침하는 원칙을 지킵니다.</p>
         <div class="trust">
           <span>개발자 인스타그램 공개 — <a href="https://www.instagram.com/dr.bae_medical/" target="_blank" rel="noopener">@dr.bae_medical</a></span>
           <span>공동구매 진행하지 않음 — 가격 질서 보호</span>
@@ -769,7 +771,7 @@ footer b{color:#EDE7DA;}
       <summary><span class="fa-num">5</span><span class="fa-t">8년간 무너지지 않은 가격과 유통</span></summary>
       <div class="p-body">
         <p>닥터배는 8년 동안 가격이 무너진 적도, 유통 질서가 무너진 적도 없습니다.
-        인플루언서 공동구매 제안은 모두 거절해 왔습니다 — 전문가 라인의 가치를 지키기 위해서이며, 인플루언서 공구용 브랜드는 별도로 운영합니다.
+        <b class="pen-under">인플루언서 공동구매 제안은 모두 거절해 왔습니다</b> — 전문가 라인의 가치를 지키기 위해서이며, 인플루언서 공구용 브랜드는 별도로 운영합니다.
         메인 제품인 <b>엑소토카인 블루 · 피디로엔 핑크</b>는 2021년부터 지금까지 지속적으로 유통 중이며, 단종 계획이 없습니다.
         한 번 도입한 프로그램을 오래 운영할 수 있다는 뜻입니다.</p>
       </div>
