@@ -465,120 +465,191 @@ details[open] .dbc-native,
 
 </style>
 <style id="drbae-neu">
-/* ===== 뉴모픽(Neumorphism) 스킨 — 본문 전체 =====
-   같은 바탕색 위에 밝은 그림자(좌상)와 어두운 그림자(우하)로 요소를 띄우거나(raised) 눌러 넣는다(inset).
-   글자 대비는 기존 ink/sub/navy 값을 유지해 가독성을 지킨다. 히어로·푸터는 브랜드 네이비 유지. */
+/* ============================================================
+   뉴모픽 스킨 — 고객 안내 페이지(drbae-customer)와 동일한 규격
+   바탕 #E8E5DF 위에서 왼쪽 위 밝은 그림자 + 오른쪽 아래 어두운 그림자로
+   '튀어나온 면', 안쪽 그림자로 '눌린 면'을 만든다. 테두리선은 쓰지 않는다.
+   이 블록만 지우면 이전 디자인으로 돌아간다.
+   ============================================================ */
 :root{
-  --neu-base:#e6ebf1;
-  --neu-dark:#c2cad5;
-  --neu-light:#ffffff;
-  --neu-up:7px 7px 16px var(--neu-dark),-7px -7px 16px var(--neu-light);
-  --neu-up-sm:4px 4px 9px var(--neu-dark),-4px -4px 9px var(--neu-light);
-  --neu-up-lg:10px 10px 22px var(--neu-dark),-10px -10px 22px var(--neu-light);
-  --neu-in:inset 5px 5px 11px var(--neu-dark),inset -5px -5px 11px var(--neu-light);
-  --neu-in-sm:inset 2px 2px 5px var(--neu-dark),inset -2px -2px 5px var(--neu-light);
-}
-body{background:var(--neu-base);}
+  --neu-bg:#E8E5DF;
+  --neu-light:rgba(255,255,255,.92);
+  --neu-dark:rgba(163,152,136,.52);
+  --neu-out:9px 9px 20px var(--neu-dark),-9px -9px 20px var(--neu-light);
+  --neu-out-lg:12px 12px 26px var(--neu-dark),-12px -12px 26px var(--neu-light);
+  --neu-out-md:6px 6px 14px var(--neu-dark),-6px -6px 14px var(--neu-light);
+  --neu-out-sm:3px 3px 8px var(--neu-dark),-3px -3px 8px var(--neu-light);
+  --neu-in:inset 5px 5px 12px var(--neu-dark),inset -5px -5px 12px var(--neu-light);
+  --neu-in-sm:inset 2px 2px 6px var(--neu-dark),inset -2px -2px 6px var(--neu-light);
+  --neu-groove:inset 0 1px 0 rgba(163,152,136,.38),inset 0 -1px 0 var(--neu-light);
 
-/* ---------- 히어로 퀵내비: 네이비 위 다크 뉴모픽 ---------- */
+  /* 레퍼런스 색 팔레트 */
+  --navy:#1F3A5C;
+  --blue:#4E7290;
+  --slate:#4E7290;
+  --taupe:#8E8271;
+  --ink:#262624;
+  --sub:#5E5B55;
+  --gold:#8E8271;
+  --line:#DAD5CB;
+  --sky:#F3F0EB;
+  --bg:var(--neu-bg);
+  --card:var(--neu-bg);
+  --key:#B3281E;
+  --warn:#8C5A3C;
+  --warnbg:#FBF3E4;
+}
+body{background:var(--neu-bg);color:var(--body,#3F3D39);}
+.wrap{max-width:920px;}
+
+/* ---------- 상단 비공개 바 ---------- */
+.dbn{background:#1F3A5C;border-bottom:2px solid var(--taupe);color:#CFC9BC;}
+.dbn b{color:#E8DEC8;}
+.dbn span{color:#A8B6C6;}
+
+/* ---------- 히어로: 레퍼런스와 같은 밝은 모래빛 ---------- */
+header{background:var(--neu-bg);color:var(--ink);padding:56px 0 46px;}
+.hero-badge{
+  border:0;padding:0;margin-bottom:14px;color:var(--taupe);
+  font-size:.68rem;font-weight:800;letter-spacing:.2em;
+}
+header h1{color:var(--navy);letter-spacing:-.03em;}
+header h1 small{color:var(--sub);font-weight:500;margin-top:14px;}
+.hero-rule{width:40px;height:2px;background:var(--taupe);margin:22px auto 18px;}
+.hero-note{color:var(--slate);font-weight:500;margin-top:0;}
+
+/* ---------- 히어로 퀵내비 ---------- */
+.qnav{margin-top:26px;}
 .qnav a{
-  background:#173a60;border:0;color:#dce9f7;
-  box-shadow:4px 4px 10px #0a1f36,-4px -4px 10px #26507e;
+  background:var(--neu-bg);border:0;color:var(--sub);
+  box-shadow:var(--neu-out-sm);transition:box-shadow .2s,color .2s;
 }
-.qnav a:hover{background:#173a60;box-shadow:5px 5px 12px #0a1f36,-5px -5px 12px #2b5a8c;}
-.qnav a:active{box-shadow:inset 3px 3px 7px #0a1f36,inset -3px -3px 7px #26507e;}
-.qnav a.qn-main{background:#c69533;color:#1d2229;box-shadow:4px 4px 10px #0a1f36,-4px -4px 10px #26507e;}
-.qnav a.qn-main:hover{background:#cf9e3b;}
+.qnav a:hover{background:var(--neu-bg);color:var(--navy);box-shadow:var(--neu-out-md);}
+.qnav a:active{box-shadow:var(--neu-in-sm);}
+.qnav a.qn-main{background:var(--navy);border:0;color:#F2EFE8;box-shadow:var(--neu-out-sm);}
+.qnav a.qn-main:hover{background:#25456c;color:#fff;}
 
-/* ---------- 떠 있는 판(raised) ---------- */
+/* ---------- 떠 있는 판 ---------- */
 .brand-intro,details,.stepcard,.pull,.mj-card,.addon,.rules{
-  background:var(--neu-base);border:0;box-shadow:var(--neu-up);
+  background:var(--neu-bg);border:0;box-shadow:var(--neu-out);
 }
 .brand-intro{border-radius:22px;}
-details{border-radius:18px;margin-bottom:16px;transition:box-shadow .25s;}
+details{border-radius:22px;margin-bottom:18px;transition:box-shadow .3s;}
 details[open]{box-shadow:var(--neu-in);}
-.p-body{border-top:1px solid rgba(160,172,186,.35);}
+.p-body{border-top:0;box-shadow:var(--neu-groove);}
+.sec-label{color:var(--taupe);}
+h2{color:var(--navy);}
 
-/* ---------- 칩·배지: 눌린 홈(inset) ---------- */
+/* ---------- 칩 · 배지: 작게 떠 있는 면 ---------- */
 .p-tag,.trust span,.sc-tag,.step .use,.mj-badge{
-  background:var(--neu-base);border:0;box-shadow:var(--neu-in-sm);
+  background:var(--neu-bg);border:0;color:var(--sub);box-shadow:var(--neu-out-sm);
 }
+.mj-badge{color:var(--taupe);}
+.trust a{color:var(--navy);}
 .dbc-click,.dbc-native{
-  background:var(--neu-base) !important;border:0 !important;box-shadow:var(--neu-up-sm) !important;
+  background:var(--neu-bg) !important;border:0 !important;color:var(--taupe) !important;
+  box-shadow:var(--neu-out-sm) !important;
 }
 details[open] > summary .dbc-click,details[open] .dbc-native{
-  background:var(--neu-base) !important;box-shadow:var(--neu-in-sm) !important;
+  background:var(--neu-bg) !important;color:var(--navy) !important;box-shadow:var(--neu-in-sm) !important;
 }
-.dot{box-shadow:2px 2px 4px var(--neu-dark),-2px -2px 4px var(--neu-light);}
-.caution{background:#efe6d3;border:0;box-shadow:var(--neu-in-sm);border-radius:12px;}
+.dot{box-shadow:var(--neu-out-sm);}
+.caution{background:var(--warnbg);border:0;color:var(--warn);box-shadow:var(--neu-in-sm);border-radius:14px;}
 
-/* ---------- 번호 원: 오목 ---------- */
-.fa-num,.sc-num{background:var(--neu-base);box-shadow:var(--neu-in-sm);}
-.step-num{background:var(--neu-base);border:0;box-shadow:var(--neu-up-sm);}
-.step::before{background:#cdd4de;}
+/* ---------- 번호 ---------- */
+.fa-num,.sc-num{background:var(--neu-bg);color:var(--taupe);box-shadow:var(--neu-in-sm);}
+.fa-t{color:var(--ink);}
+.step-num{background:var(--neu-bg);border:0;color:var(--navy);box-shadow:var(--neu-out-sm);}
+.step::before{background:none;box-shadow:inset 1px 0 0 rgba(163,152,136,.38),inset -1px 0 0 var(--neu-light);width:2px;}
+.kv b{color:var(--navy);}
+.rules li::before{color:var(--taupe);}
 
 /* ---------- 시작하기 STEP 카드 ---------- */
-.stepcard{border-radius:18px;transition:box-shadow .2s,transform .2s;}
-.stepcard:hover{border:0;transform:none;box-shadow:var(--neu-up-lg);}
+.stepcard{border-radius:18px;transition:box-shadow .25s,transform .2s;}
+.stepcard:hover{border:0;transform:none;box-shadow:var(--neu-out-lg);}
 .stepcard:active{box-shadow:var(--neu-in);}
-.stepcard.sc-demo,.stepcard.sc-order{background:var(--neu-base);border:0;}
-.stepcard.sc-demo .sc-num{background:var(--neu-base);color:#c22e2e;}
-.stepcard.sc-demo .sc-tag{background:var(--neu-base);color:#b03030;}
-.sc-go{box-shadow:3px 3px 7px var(--neu-dark),-3px -3px 7px var(--neu-light);}
+.stepcard.sc-demo,.stepcard.sc-order{background:var(--neu-bg);border:0;}
+.sc-t{color:var(--navy);}
+.stepcard.sc-demo .sc-num{background:var(--neu-bg);color:var(--key);}
+.stepcard.sc-demo .sc-tag{background:var(--neu-bg);color:var(--key);}
+.stepcard.sc-demo .sc-go{background:var(--key);}
+.sc-go{background:var(--navy);box-shadow:var(--neu-out-sm);}
 .start-note{
-  background:var(--neu-base);border:0;border-radius:16px;box-shadow:var(--neu-in);
+  background:var(--neu-bg);border:0;border-radius:16px;box-shadow:var(--neu-in);color:#4F493C;
 }
-.start-note b{color:#8a5a00;}
+.start-note p{color:#4F493C;}
+.start-note b{color:var(--warn);}
+.start-after a{color:var(--navy);}
 
 /* ---------- 인용 블록 ---------- */
-.pull{color:var(--sub);border-radius:20px;}
+.pull{color:var(--sub);border-radius:22px;}
 .pull strong{color:var(--navy);}
-.pull .src{color:#7f8b99;}
+.pull .src{color:var(--taupe);}
 
 /* ---------- 논문 이미지 ---------- */
-.paper-img{border:0;box-shadow:var(--neu-up-sm);}
+.paper-img{border:0;border-radius:18px;box-shadow:var(--neu-out-md);}
+.paper-badge{background:var(--neu-bg);color:var(--taupe);box-shadow:var(--neu-out-sm);}
+.paper-lead b{color:var(--navy);}
+.paper-imgnote{color:var(--taupe);}
 
-/* ---------- 마이크로젝션 카드: 밝은 뉴모픽으로 전환 ---------- */
+/* ---------- 마이크로젝션 ---------- */
 .mj-card{color:var(--ink);border-radius:22px;}
-.mj-badge{color:var(--blue);}
 .mj-desc{color:var(--ink);}
-.mj-desc b{color:var(--navy);}
-.mj-entry{background:var(--neu-base);border:0;border-radius:16px;box-shadow:var(--neu-in);}
-.mj-entry h3{color:var(--navy);}
+.mj-desc b,.mj-entry b,.mj-entry h3{color:var(--navy);}
+.mj-entry{background:var(--neu-bg);border:0;border-radius:16px;box-shadow:var(--neu-in);}
 .mj-entry li{color:var(--sub);}
-.mj-entry b{color:var(--navy);}
-.mj-note{
-  background:var(--neu-base);border:0;color:var(--sub);box-shadow:var(--neu-up-sm);
-}
-.mj-note-badge{background:var(--neu-base);color:var(--navy);box-shadow:var(--neu-in-sm);}
-.mj-alert{
-  background:#efdfe1;border:0;color:#6e2a2a;box-shadow:var(--neu-in-sm);
-}
-.mj-alert b{color:#b52a2a;}
+.mj-entry li::before{color:var(--taupe);}
+.mj-note{background:var(--neu-bg);border:0;color:var(--sub);box-shadow:var(--neu-out-md);border-radius:14px;}
+.mj-note-badge{background:var(--neu-bg);color:var(--navy);box-shadow:var(--neu-in-sm);}
+.mj-alert{background:var(--warnbg);border:0;color:var(--warn);box-shadow:var(--neu-out-md);border-radius:14px;}
+.mj-alert b{color:#8A2018;}
+.mj-alert-badge{background:var(--key);color:#fff;}
 
 /* ---------- 공인 파트너 3x3 ---------- */
 .partner-wrap{margin-top:26px;}
-.partner-h{font-size:1.02rem;font-weight:800;color:var(--navy);margin-bottom:6px;}
+.partner-h{font-size:1.02rem;font-weight:800;margin-bottom:6px;}
 .partner-lead{font-size:.9rem;color:var(--sub);margin-bottom:16px;max-width:640px;}
 .partner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
 .pcard{
   display:flex;flex-direction:column;align-items:center;text-decoration:none;
-  background:var(--neu-base);border-radius:16px;padding:9px 9px 13px;
-  box-shadow:var(--neu-up-sm);transition:box-shadow .2s;
+  padding:9px 9px 13px;transition:box-shadow .2s;
 }
-.pcard:hover{box-shadow:var(--neu-up);}
-.pcard:active{box-shadow:var(--neu-in-sm);}
-.pcard:focus-visible{outline:2px solid var(--blue);outline-offset:3px;}
 .pc-photo{
   display:block;width:100%;height:auto;aspect-ratio:14/15;object-fit:cover;object-position:top center;
-  border-radius:11px;background:#fff;box-shadow:var(--neu-in-sm);
+  border-radius:11px;
 }
 .pc-name{
-  display:block;margin-top:10px;font-size:.8rem;font-weight:800;color:var(--navy);
+  display:block;margin-top:10px;font-size:.8rem;font-weight:800;
   text-align:center;line-height:1.3;word-break:keep-all;
 }
-.pc-area{display:block;margin-top:3px;font-size:.72rem;color:var(--sub);text-align:center;}
+.pc-area{display:block;margin-top:3px;font-size:.72rem;text-align:center;}
+.partner-h{color:var(--navy);}
+.pcard{background:var(--neu-bg);border-radius:18px;box-shadow:var(--neu-out-md);}
+.pcard:hover{box-shadow:var(--neu-out);}
+.pcard:active{box-shadow:var(--neu-in-sm);}
+.pc-photo{background:var(--neu-bg);box-shadow:var(--neu-in-sm);}
+.pc-name{color:var(--navy);}
+.pc-area{color:var(--taupe);}
+
+/* ---------- 푸터 ---------- */
+footer{background:#1F3A5C;color:#B7B0A2;}
+footer b{color:#EDE7DA;}
+.drbae-conf{border-color:rgba(255,255,255,.3);}
+
+/* ---------- 키보드 포커스 ---------- */
+.stepcard:focus-visible,summary:focus-visible,.pcard:focus-visible,.qnav a:focus-visible{
+  outline:2px solid var(--navy);outline-offset:3px;
+}
+
+/* ---------- 모바일: 그림자 폭 축소 ---------- */
 @media(max-width:480px){
+  :root{
+    --neu-out:6px 6px 14px var(--neu-dark),-6px -6px 14px var(--neu-light);
+    --neu-out-lg:8px 8px 18px var(--neu-dark),-8px -8px 18px var(--neu-light);
+    --neu-out-md:4px 4px 10px var(--neu-dark),-4px -4px 10px var(--neu-light);
+    --neu-in:inset 4px 4px 10px var(--neu-dark),inset -4px -4px 10px var(--neu-light);
+  }
+  header{padding:40px 0 34px;}
   .partner-wrap{margin-top:20px;}
   .partner-lead{font-size:.85rem;margin-bottom:12px;}
   .partner-grid{gap:8px;}
@@ -586,21 +657,7 @@ details[open] > summary .dbc-click,details[open] .dbc-native{
   .pc-photo{border-radius:9px;}
   .pc-name{margin-top:7px;font-size:.67rem;}
   .pc-area{font-size:.62rem;}
-}
-
-/* ---------- 키보드 포커스 ---------- */
-.stepcard:focus-visible,summary:focus-visible,.pcard:focus-visible,.qnav a:focus-visible{
-  outline:2px solid var(--blue);outline-offset:3px;
-}
-
-/* ---------- 모바일: 그림자 폭을 줄여 좌우 여백 안에 담기 ---------- */
-@media(max-width:480px){
-  :root{
-    --neu-up:5px 5px 12px var(--neu-dark),-5px -5px 12px var(--neu-light);
-    --neu-up-lg:6px 6px 14px var(--neu-dark),-6px -6px 14px var(--neu-light);
-    --neu-in:inset 4px 4px 9px var(--neu-dark),inset -4px -4px 9px var(--neu-light);
-  }
-  details{margin-bottom:14px;}
+  details{margin-bottom:16px;border-radius:18px;}
   .start-list{gap:14px;}
 }
 </style>
@@ -614,6 +671,7 @@ details[open] > summary .dbc-click,details[open] .dbc-native{
     <h1>닥터배 입점 가이드 및 주문
       <small>에스테틱 전문가를 위한 제품 안내 · 입점 절차 · 주문 링크</small>
     </h1>
+    <div class="hero-rule"></div>
     <p class="hero-note">숭실대학교 의공학 연구실에서 출발한 전문가용 스킨부스터</p>
 
     <nav class="qnav" aria-label="바로가기">
