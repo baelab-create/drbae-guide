@@ -571,6 +571,38 @@ details[open] > summary .dbc-click,details[open] .dbc-native{
 .mj-cta:hover{transform:none;box-shadow:var(--neu-up);}
 .mj-cta:active{box-shadow:var(--neu-in-sm);}
 
+/* ---------- 공인 파트너 3x3 ---------- */
+.partner-wrap{margin-top:26px;}
+.partner-h{font-size:1.02rem;font-weight:800;color:var(--navy);margin-bottom:6px;}
+.partner-lead{font-size:.9rem;color:var(--sub);margin-bottom:16px;max-width:640px;}
+.partner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.pcard{
+  display:flex;flex-direction:column;align-items:center;text-decoration:none;
+  background:var(--neu-base);border-radius:16px;padding:9px 9px 13px;
+  box-shadow:var(--neu-up-sm);transition:box-shadow .2s;
+}
+.pcard:hover{box-shadow:var(--neu-up);}
+.pcard:active{box-shadow:var(--neu-in-sm);}
+.pcard:focus-visible{outline:2px solid var(--blue);outline-offset:3px;}
+.pc-photo{
+  display:block;width:100%;height:auto;aspect-ratio:14/15;object-fit:cover;object-position:top center;
+  border-radius:11px;background:#fff;box-shadow:var(--neu-in-sm);
+}
+.pc-name{
+  display:block;margin-top:10px;font-size:.8rem;font-weight:800;color:var(--navy);
+  text-align:center;line-height:1.3;word-break:keep-all;
+}
+.pc-area{display:block;margin-top:3px;font-size:.72rem;color:var(--sub);text-align:center;}
+@media(max-width:480px){
+  .partner-wrap{margin-top:20px;}
+  .partner-lead{font-size:.85rem;margin-bottom:12px;}
+  .partner-grid{gap:8px;}
+  .pcard{padding:6px 6px 10px;border-radius:13px;}
+  .pc-photo{border-radius:9px;}
+  .pc-name{margin-top:7px;font-size:.67rem;}
+  .pc-area{font-size:.62rem;}
+}
+
 /* ---------- 키보드 포커스 ---------- */
 .stepcard:focus-visible,summary:focus-visible,.mj-cta:focus-visible,.qnav a:focus-visible{
   outline:2px solid var(--blue);outline-offset:3px;
@@ -755,7 +787,7 @@ details[open] > summary .dbc-click,details[open] .dbc-native{
         <h3>납품 안내</h3>
         <ul>
           <li><b>스킨부스터</b> — 데모 테스트 후 <b>교육 없이 입점 가능</b>합니다.</li>
-          <li><b>마이크로젝션</b> — 전국 <b>닥터배 공인 파트너 8곳</b>을 통해서만 납품해 드립니다.</li>
+          <li><b>마이크로젝션</b> — 전국 <b>닥터배 공인 파트너 9인</b>을 통해서만 납품해 드립니다.</li>
           <li>공인 파트너가 <b>교육과 멘토링</b>을 진행하고, 그 과정을 마치신 뒤 기기가 납품됩니다.</li>
           <li>대상: <b>닥터배 스킨부스터 라인을 메인으로 활용하고 있는 샵</b></li>
         </ul>
@@ -770,6 +802,66 @@ details[open] > summary .dbc-click,details[open] .dbc-native{
         <a class="mj-cta" href="https://www.instagram.com/dr.bae_medical/" target="_blank" rel="noopener">
           공인 파트너 연결 문의 — 인스타그램 DM @dr.bae_medical
         </a>
+      </div>
+    </div>
+
+    <div class="partner-wrap" id="partners">
+      <h3 class="partner-h">닥터배 공인 파트너 9인</h3>
+      <p class="partner-lead">사진을 누르면 해당 파트너의 인스타그램으로 바로 연결됩니다. 가까운 파트너에게 교육과 멘토링을 받으시게 됩니다.</p>
+      <div class="partner-grid">
+      <a class="pcard" href="https://www.instagram.com/jpkorea_yangsan/" target="_blank" rel="noopener">
+        <img class="pc-photo" src="assets/partners/jpkorea-yangsan.jpg" width="560" height="600" loading="lazy" alt="쟌피오베르 양산점 · 부울경">
+        <span class="pc-name">쟌피오베르 양산점</span>
+        <span class="pc-area">부울경</span>
+      </a>
+
+      <a class="pcard" href="https://www.instagram.com/lohana.coskin/" target="_blank" rel="noopener">
+        <img class="pc-photo" src="assets/partners/lohana-coskin.jpg" width="560" height="600" loading="lazy" alt="로하나코스킨 · 서울 강남구청">
+        <span class="pc-name">로하나코스킨</span>
+        <span class="pc-area">서울 강남구청</span>
+      </a>
+
+      <a class="pcard" href="https://www.instagram.com/klebeauty_/" target="_blank" rel="noopener">
+        <img class="pc-photo" src="assets/partners/kle-creed.jpg" width="560" height="600" loading="lazy" alt="클솔루션 크리드 · 서울 잠실">
+        <span class="pc-name">클솔루션 크리드</span>
+        <span class="pc-area">서울 잠실</span>
+      </a>
+
+      <a class="pcard" href="https://www.instagram.com/misong_academy/" target="_blank" rel="noopener">
+        <img class="pc-photo" src="assets/partners/misong-academy.jpg" width="560" height="600" loading="lazy" alt="미송 아카데미 · 대구 경북">
+        <span class="pc-name">미송 아카데미</span>
+        <span class="pc-area">대구 경북</span>
+      </a>
+
+      <a class="pcard" href="https://www.instagram.com/my.0n_skin/" target="_blank" rel="noopener">
+        <img class="pc-photo" src="assets/partners/myon-skin.jpg" width="560" height="600" loading="lazy" alt="마이온 스킨 아카데미 · 이대">
+        <span class="pc-name">마이온 스킨 아카데미</span>
+        <span class="pc-area">이대</span>
+      </a>
+
+      <a class="pcard" href="https://www.instagram.com/microblack_official/" target="_blank" rel="noopener">
+        <img class="pc-photo" src="assets/partners/microblack-official.jpg" width="560" height="600" loading="lazy" alt="마이크로 블랙&레드 · 총괄 대표">
+        <span class="pc-name">마이크로 블랙&레드</span>
+        <span class="pc-area">총괄 대표</span>
+      </a>
+
+      <a class="pcard" href="https://www.instagram.com/microred.ceo/" target="_blank" rel="noopener">
+        <img class="pc-photo" src="assets/partners/microred-cheongdam.jpg" width="560" height="600" loading="lazy" alt="마이크로블랙&레드 · 서울 청담">
+        <span class="pc-name">마이크로블랙&레드</span>
+        <span class="pc-area">서울 청담</span>
+      </a>
+
+      <a class="pcard" href="https://www.instagram.com/fillinskin_aesthetic/" target="_blank" rel="noopener">
+        <img class="pc-photo" src="assets/partners/fillinskin-gwangju.jpg" width="560" height="600" loading="lazy" alt="마이크로블랙&레드 · 광주 전남">
+        <span class="pc-name">마이크로블랙&레드</span>
+        <span class="pc-area">광주 전남</span>
+      </a>
+
+      <a class="pcard" href="https://www.instagram.com/micro.cheongdam_daegu/" target="_blank" rel="noopener">
+        <img class="pc-photo" src="assets/partners/micro-daegu.jpg" width="560" height="600" loading="lazy" alt="마이크로블랙&레드 · 대구 경북">
+        <span class="pc-name">마이크로블랙&레드</span>
+        <span class="pc-area">대구 경북</span>
+      </a>
       </div>
     </div>
   </div>
